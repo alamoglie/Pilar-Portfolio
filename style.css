@@ -13,8 +13,11 @@
   --color-accent-o:   #e84b00;
   --color-overlay:    rgba(0, 0, 0, 0.30);
 
-  --nav-height: 127px;
+  --nav-height: 95px;
   --hero-max-h: 80vh;
+  --design-width: 1440px;
+  --content-margin: clamp(20px, 7.778vw, 112px);
+  --content-max-width: calc(var(--design-width) - 2 * 112px);
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -43,6 +46,14 @@ a {
 
 ul { list-style: none; }
 
+/* Contenido acotado: 112px de margen lateral en 1440px, proporcional en el resto */
+.content,
+.bio__text {
+  width: calc(100% - 2 * var(--content-margin));
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+}
+
 /* ──────────────────────────────────────────────
    NAVIGATION
    ────────────────────────────────────────────── */
@@ -59,15 +70,13 @@ ul { list-style: none; }
   align-items: center;
   gap: 32px;
   height: var(--nav-height);
-  padding: 0 24px;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 0 30px;
 }
 
 /* Logo image */
 .nav__logo-img {
-  width: 68px;
-  height: auto;
+  width: 45px;
+  height: 51px;
   display: block;
   transition: opacity 0.2s var(--ease-out);
 }
@@ -84,7 +93,7 @@ ul { list-style: none; }
 
 .nav__link {
   font-family: var(--font-body);
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 470;
   color: var(--color-nav-link);
   position: relative;
@@ -95,9 +104,9 @@ ul { list-style: none; }
 .nav__link::after {
   content: '';
   position: absolute;
-  left: 0; bottom: -6px;
+  left: 0; bottom: -4.5px;
   width: 0;
-  height: 6px;
+  height: 4.5px;
   background: var(--color-text);
   transition: width 0.25s var(--ease-out);
 }
@@ -224,15 +233,15 @@ ul { list-style: none; }
 /* ── Name caption ── */
 .hero__caption {
   position: absolute;
-  bottom: 28px;
-  left: 28px;
+  bottom: 32px;
+  left: 56px;
   color: #ffffff;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  text-align: left;
 }
 
 .hero__name {
   font-family: var(--font-display);
-  font-size: 72px;
+  font-size: 54px;
   font-weight: 520;
   font-variation-settings: "opsz" 87, "wdth" 93;
   letter-spacing: -0.02em;
@@ -242,10 +251,11 @@ ul { list-style: none; }
 
 .hero__role {
   font-family: var(--font-display);
-  font-size: 32.52px;
-  font-weight: 800;
+  font-size: 24px;
+  font-weight: 700;
+  font-variation-settings: "opsz" 96;
   letter-spacing: 0;
-  line-height: 34.2px;
+  line-height: 100%;
   opacity: 1;
 }
 
@@ -256,20 +266,20 @@ ul { list-style: none; }
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 100px 24px 120px;
+  height: 800px;
+  padding: 100px 0 120px;
   background: var(--color-bg);
 }
 
 .bio__text {
   font-family: var(--font-display);
-  font-size: 74px;
+  font-size: 56px;
   font-weight: 358;
   font-variation-settings: "opsz" 87, "wdth" 93;
-  line-height: 1.15;
+  line-height: 115%;
   letter-spacing: -0.02em;
   text-align: center;
   color: var(--color-text);
-  max-width: 1200px;
 
   /* Fade-in on load */
   animation: fade-up 0.9s var(--ease-out) 0.2s both;
@@ -278,6 +288,58 @@ ul { list-style: none; }
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ──────────────────────────────────────────────
+   WORK PAGE
+   ────────────────────────────────────────────── */
+.work-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+  padding-bottom: 120px;
+}
+
+.work-item,
+.work-item__image-wrapper,
+.work-item__info {
+  width: 100%;
+}
+
+/* Imágenes con margen lateral (112px en 1440px) — fondo blanco visible a los costados */
+.work-item__image-wrapper:has(.work-item__image--inset) {
+  padding-inline: var(--content-margin);
+  box-sizing: border-box;
+}
+
+.work-item__image {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  display: block;
+}
+
+.work-item__info {
+  margin-top: 16px;
+  padding-inline: var(--content-margin);
+}
+
+.work-item__title {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 550;
+  font-variation-settings: "opsz" 87, "wdth" 93;
+  margin-bottom: 4px;
+}
+
+.work-item__role {
+  font-family: var(--font-body);
+  font-size: 25px;
+  font-weight: 470;
+  line-height: 0.82;
+  color: #000000;
+  text-transform: lowercase;
 }
 
 /* ──────────────────────────────────────────────
@@ -292,7 +354,7 @@ ul { list-style: none; }
   .hero__play { width: 56px; height: 56px; }
   .hero__play-icon svg { width: 22px; height: 22px; }
 
-  .hero__caption { left: 16px; bottom: 16px; }
+  .hero__caption { left: 56px; bottom: 32px; }
 
-  .bio { padding: 64px 20px 80px; }
+  .bio { padding: 64px 0 80px; }
 }
