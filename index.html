@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pilar Meaca is a motion graphics designer with 15+ years of experience working across broadcast, product development, and video games, based in Buenos Aires." />
+  <title>Pilar Meaca — Motion Graphics Designer</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <header class="nav-wrapper">
+    <nav class="nav" id="main-nav" aria-label="Main navigation">
+      <a href="/" class="nav__logo" aria-label="Pilar Meaca home">
+        <img src="icon.svg" alt="Pilar Meaca Logo" class="nav__logo-img" />
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="/" class="nav__link nav__link--active" aria-current="page">Home</a></li>
+        <li><a href="/work" class="nav__link">Work</a></li>
+        <li><a href="/reel" class="nav__link">Reel</a></li>
+        <li><a href="/about" class="nav__link">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="hero" id="hero" aria-label="Hero showreel">
+      <div class="hero__media">
+        <img
+          src="hero.png"
+          alt="Anime characters flying through a vibrant sky — hero showreel thumbnail"
+          class="hero__image"
+          loading="eager"
+        />
+        <!-- Diagonal speed lines overlay (CSS-driven) -->
+        <div class="hero__lines" aria-hidden="true">
+          <span class="hero__line hero__line--yellow hero__line--1"></span>
+          <span class="hero__line hero__line--yellow hero__line--2"></span>
+          <span class="hero__line hero__line--orange hero__line--3"></span>
+          <span class="hero__line hero__line--orange hero__line--4"></span>
+          <span class="hero__line hero__line--yellow hero__line--5"></span>
+        </div>
+
+        <!-- Play button -->
+        <button class="hero__play" id="play-btn" aria-label="Play showreel">
+          <span class="hero__play-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </span>
+        </button>
+
+        <!-- Name overlay -->
+        <div class="hero__caption">
+          <p class="hero__name">Pilar Meaca</p>
+          <p class="hero__role">Art Direction</p>
+          <p class="hero__role">Graphic &amp; Motion Designer</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BIO ── -->
+    <section class="bio" id="bio" aria-labelledby="bio-text">
+      <p class="bio__text" id="bio-text">
+        Motion graphics designer with 15+ years<br />
+        of experience working across broadcast,<br />
+        product development, and video games,<br />
+        based in Buenos Aires.
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>
