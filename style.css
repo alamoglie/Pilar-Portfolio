@@ -24,17 +24,6 @@
   --layout-full-width: 100%;
   --layout-contained-width: 80%;
 
-  /* Fluid typography — 1440px design baseline; scales up on wider viewports */
-  --fluid-scale: max(1, 100vw / 1440px);
-  --fs-13: calc(13px * var(--fluid-scale));
-  --fs-14: calc(14px * var(--fluid-scale));
-  --fs-16: calc(16px * var(--fluid-scale));
-  --fs-17: calc(17px * var(--fluid-scale));
-  --fs-20: calc(20px * var(--fluid-scale));
-  --fs-22: calc(22px * var(--fluid-scale));
-  --fs-33: calc(33px * var(--fluid-scale));
-  --fs-54: calc(54px * var(--fluid-scale));
-
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -140,7 +129,7 @@ ul {
 
 .nav__link {
   font-family: var(--font-body);
-  font-size: var(--fs-17);
+  font-size: 17px;
   font-weight: 550;
   color: var(--color-nav-link);
   position: relative;
@@ -341,7 +330,7 @@ ul {
 
 .hero__name {
   font-family: var(--font-display);
-  font-size: var(--fs-54);
+  font-size: 54px;
   font-weight: 520;
   font-variation-settings: "wdth" 95;
   letter-spacing: -0.04em;
@@ -351,7 +340,7 @@ ul {
 
 .hero__role {
   font-family: var(--font-display);
-  font-size: var(--fs-22);
+  font-size: 22px;
   font-weight: 400;
   font-variation-settings: "wdth" 95;
   letter-spacing: 0;
@@ -373,7 +362,7 @@ ul {
 
 .bio__text {
   font-family: var(--font-display);
-  font-size: var(--fs-54);
+  font-size: 54px;
   font-weight: 400;
   font-variation-settings: "wdth" 95;
   line-height: 120%;
@@ -435,7 +424,7 @@ ul {
 
 .work-item__title {
   font-family: var(--font-display);
-  font-size: var(--fs-33);
+  font-size: 33px;
   font-weight: 600;
   letter-spacing: -0.04em;
   font-variation-settings: "wdth" 95;
@@ -445,7 +434,7 @@ ul {
 
 .work-item__role {
   font-family: var(--font-body);
-  font-size: var(--fs-20);
+  font-size: 20px;
   font-weight: 400;
   line-height: 0.82;
   color: #000000;
@@ -540,10 +529,6 @@ button.nav__link {
   box-sizing: border-box;
 }
 
-/* Fluid type helpers (1440px = design baseline)
-   Fixed size:  var(--fs-16)           — scales up only above 1440px
-   Responsive: max(14px, calc(16px * 100vw / 1440)) — floor + scales with viewport */
-
 /* -- Section 1: full-width hero image -- */
 .project-hero {
   width: 100%;
@@ -576,7 +561,7 @@ button.nav__link {
 
 .project-intro__title {
   font-family: var(--font-display);
-  font-size: max(28px, calc(36px * 100vw / 1440));
+  font-size: clamp(28px, 2.5vw, 36px);
   font-weight: 600;
   font-variation-settings: "wdth" 95;
   letter-spacing: -0.04em;
@@ -589,7 +574,7 @@ button.nav__link {
   flex-direction: column;
   gap: 4px;
   font-family: var(--font-body);
-  font-size: var(--fs-16);
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: var(--color-text);
@@ -611,7 +596,7 @@ button.nav__link {
 
 .project-intro__desc {
   font-family: var(--font-body);
-  font-size: max(15px, calc(16px * 100vw / 1440));
+  font-size: clamp(15px, 1.111vw, 16px);
   font-weight: 400;
   line-height: 1.6;
   color: var(--color-text);
@@ -650,7 +635,7 @@ button.nav__link {
 }
 
 .theme-section--dark .theme-content-block__label {
-  font-size: max(16px, calc(24px * 100vw / 1440));
+  font-size: clamp(16px, 1.667vw, 24px);
   font-weight: 600;
   letter-spacing: 0.1em;
   color: #c9a84b;
@@ -694,7 +679,7 @@ button.nav__link {
 
 .astro-branded__label {
   font-family: 'Raleway', sans-serif;
-  font-size: max(18px, calc(24px * 100vw / 1440));
+  font-size: clamp(18px, 2vw, 24px);
   font-weight: 500;
   letter-spacing: 0.04em;
   color: rgba(255, 255, 255, 0.9);
@@ -703,7 +688,7 @@ button.nav__link {
 
 .astro-branded__desc {
   font-family: 'Raleway', sans-serif;
-  font-size: max(14px, calc(16px * 100vw / 1440));
+  font-size: clamp(14px, 1.111vw, 16px);
   font-weight: 400;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.55);
@@ -799,7 +784,7 @@ button.nav__link {
 
 .astro-alerts__title {
   font-family: 'Raleway', sans-serif;
-  font-size: max(36px, calc(52px * 100vw / 1440));
+  font-size: clamp(36px, 4.5vw, 52px);
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.1;
@@ -809,7 +794,7 @@ button.nav__link {
 
 .astro-alerts__desc {
   font-family: 'Raleway', sans-serif;
-  font-size: max(15px, calc(18px * 100vw / 1440));
+  font-size: clamp(15px, 1.25vw, 18px);
   font-weight: 400;
   line-height: 1.55;
   color: #FFF0D7;
@@ -899,7 +884,7 @@ button.nav__link {
 
 .hitman-branded__desc {
   font-family: var(--font-body);
-  font-size: max(14px, calc(16px * 100vw / 1440));
+  font-size: clamp(14px, 1.111vw, 16px);
   font-weight: 400;
   line-height: 1.65;
   color: #FFF0D7;
@@ -991,7 +976,7 @@ button.nav__link {
 
 .hitman-alerts__desc {
   font-family: var(--font-body);
-  font-size: max(15px, calc(18px * 100vw / 1440));
+  font-size: clamp(15px, 1.25vw, 18px);
   font-weight: 400;
   line-height: 1.55;
   color: #FFF0D7;
@@ -1070,7 +1055,7 @@ button.nav__link {
 
 .holiday-pack__desc {
   font-family: 'Nunito Sans', sans-serif;
-  font-size: max(15px, calc(18px * 100vw / 1440));
+  font-size: clamp(15px, 1.25vw, 18px);
   font-weight: 400;
   line-height: 1.55;
   color: #ffffff;
@@ -1141,7 +1126,7 @@ button.nav__link {
 
 .astro-heading {
   font-family: var(--font-display);
-  font-size: max(64px, calc(144px * 100vw / 1440));
+  font-size: clamp(64px, 10vw, 144px);
   font-weight: 700;
   font-variation-settings: "wdth" 100;
   letter-spacing: -0.04em;
@@ -1158,7 +1143,7 @@ button.nav__link {
 
 .theme-content-block__label {
   font-family: var(--font-body);
-  font-size: var(--fs-13);
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1168,7 +1153,7 @@ button.nav__link {
 
 .theme-content-block__desc {
   font-family: var(--font-body);
-  font-size: max(14px, calc(16px * 100vw / 1440));
+  font-size: clamp(14px, 1.111vw, 16px);
   font-weight: 400;
   line-height: 1.65;
   max-width: 640px;
@@ -1247,7 +1232,7 @@ button.nav__link {
 
 .bond-alerts__desc {
   font-family: var(--font-body);
-  font-size: max(14px, calc(16px * 100vw / 1440));
+  font-size: clamp(14px, 1.111vw, 16px);
   font-weight: 400;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.55);
@@ -1325,7 +1310,7 @@ button.nav__link {
 
 .other-projects__label {
   font-family: var(--font-body);
-  font-size: max(14px, calc(16px * 100vw / 1440));
+  font-size: clamp(14px, 1.111vw, 16px);
   font-weight: 400;
   text-transform: lowercase;
   text-align: center;
@@ -1371,7 +1356,7 @@ button.nav__link {
 
 .project-nav__link {
   font-family: var(--font-body);
-  font-size: var(--fs-16);
+  font-size: 16px;
   font-weight: 500;
   color: var(--color-nav-link);
   transition: opacity 0.2s;
@@ -1398,7 +1383,7 @@ button.nav__link {
   .astro-scene__play--talk { left: 40%; top: 55%; }
   .holiday-pack__grid-wrap { max-width: 640px; }
   .alerts-grid--3col { grid-template-columns: repeat(2, 1fr); }
-  .astro-heading { font-size: max(48px, calc(96px * 100vw / 1440)); }
+  .astro-heading { font-size: clamp(48px, 8vw, 96px); }
 }
 
 @media (max-width: 520px) {
@@ -1427,7 +1412,7 @@ button.nav__link {
 
 .project-intro__subheadline {
   font-family: var(--font-body);
-  font-size: var(--fs-14);
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1452,7 +1437,7 @@ button.nav__link {
   padding-inline: var(--content-margin);
   box-sizing: border-box;
   font-family: var(--font-body);
-  font-size: var(--fs-13);
+  font-size: 13px;
   line-height: 1.5;
   color: #555555;
   margin-bottom: 24px;
@@ -1558,7 +1543,7 @@ button.nav__link {
   padding: 48px var(--content-margin) 0;
   box-sizing: border-box;
   font-family: var(--font-body);
-  font-size: var(--fs-13);
+  font-size: 13px;
   line-height: 1.5;
   color: #555555;
   margin-bottom: 0;
@@ -1624,7 +1609,7 @@ button.nav__link {
 
 .page-hello-fresh .other-projects__label {
   font-family: var(--font-display);
-  font-size: max(14px, calc(16px * 100vw / 1440));
+  font-size: clamp(14px, 1.111vw, 16px);
   font-weight: 400;
   text-transform: none;
   text-align: left;
@@ -1679,7 +1664,7 @@ button.nav__link {
 
 .site-footer__copy {
   font-family: 'TikTok Sans', var(--font-body);
-  font-size: max(18px, calc(26px * 100vw / 1440));
+  font-size: clamp(18px, 2vw, 26px);
   font-weight: 500;
   color: #111111;
   letter-spacing: -0.01em;
@@ -1687,7 +1672,7 @@ button.nav__link {
 
 .site-footer__back {
   font-family: 'TikTok Sans', var(--font-body);
-  font-size: max(18px, calc(26px * 100vw / 1440));
+  font-size: clamp(18px, 2vw, 26px);
   font-weight: 500;
   color: #111111;
   text-decoration: none;
@@ -1707,7 +1692,7 @@ button.nav__link {
 
 .site-footer__link {
   font-family: 'TikTok Sans', var(--font-body);
-  font-size: var(--fs-13);
+  font-size: 13px;
   font-weight: 400;
   color: #444444;
   text-decoration: none;
@@ -1718,7 +1703,7 @@ button.nav__link {
 
 .site-footer__time {
   font-family: 'TikTok Sans', var(--font-body);
-  font-size: var(--fs-13);
+  font-size: 13px;
   font-weight: 400;
   color: #444444;
 }
@@ -1876,7 +1861,7 @@ button.nav__link {
 
 .capn-takeover__text {
   font-family: 'Open Sans', sans-serif;
-  font-size: max(14px, calc(18px * 100vw / 1440));
+  font-size: clamp(14px, 1.25vw, 18px);
   font-weight: 400;
   line-height: 1.55;
   color: #ffffff;
@@ -1981,7 +1966,7 @@ button.nav__link {
 
 .capn-alerts__text {
   font-family: 'Open Sans', sans-serif;
-  font-size: max(14px, calc(18px * 100vw / 1440));
+  font-size: clamp(14px, 1.25vw, 18px);
   font-weight: 600;
   line-height: 1.55;
   color: #184C84;
