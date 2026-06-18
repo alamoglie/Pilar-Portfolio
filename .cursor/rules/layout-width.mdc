@@ -1,0 +1,20 @@
+---
+description: Section width convention — full-width (100%) vs contained (80%)
+globs: "**/*.{html,css}"
+alwaysApply: false
+---
+
+# Layout width
+
+Use these terms and classes when building or requesting project page sections:
+
+| Mode | Class | Width | Use for |
+|------|-------|-------|---------|
+| **full-width** | `layout--full` | 100% viewport | Heroes, backgrounds, banners, edge-to-edge composites |
+| **contained** | `layout--contained` | 80% viewport, centered | Media stacks, content blocks with shadow/margins |
+
+CSS tokens: `--layout-full-width`, `--layout-contained-width`.
+
+Apply width classes on **inner wrappers**, not always on `<section>`, so section backgrounds can remain full-width while content is contained.
+
+When the user says "full-width" or "contained", use the matching class without re-negotiating the convention.

@@ -1,0 +1,28 @@
+---
+description: Fluid typography scaled from 1440px design baseline
+globs: "**/*.{html,css}"
+alwaysApply: false
+---
+
+# Fluid typography (1440px baseline)
+
+Design width is **1440px**. Text sizes are authored for that viewport and must scale up on wider screens (not stay capped).
+
+## Tokens
+
+- `--fluid-scale: max(1, 100vw / 1440px)` — scales up only above 1440px
+- `--fs-13`, `--fs-14`, `--fs-16`, etc. — `calc(Npx * var(--fluid-scale))`
+
+## When to use which pattern
+
+**Fixed baseline (meta, labels, nav):**
+```css
+font-size: var(--fs-13); /* 13px @ 1440, grows on ultrawide */
+```
+
+**Responsive with mobile floor (body, descriptions):**
+```css
+font-size: max(14px, calc(16px * 100vw / 1440));
+```
+
+Do not use `clamp(..., max)` that caps size at 1440px (e.g. `clamp(14px, 1.111vw, 16px)`), because text stops growing on large monitors.
