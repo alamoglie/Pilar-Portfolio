@@ -1,23 +1,28 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Pilar Meaca is a motion graphics designer with 15+ years of experience working across broadcast, product development, and video games, based in Buenos Aires." />
-  <title>Pilar Meaca — Work</title>
-  <link rel="icon" type="image/svg+xml" href="icon.svg" />
+  <meta name="description"
+    content="Pilar Meaca is a motion graphics designer with 15+ years of experience working across broadcast, product development, and video games, based in Buenos Aires." />
+  <title>Pilar Meaca â€” Work</title>
+  <link rel="icon" type="image/svg+xml" href="images/shared/icon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter:wght@100..900&family=TikTok+Sans:wdth,wght@75..125,300..900&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- ── NAVIGATION ── -->
+  <!-- â”€â”€ NAVIGATION â”€â”€ -->
   <header class="nav-wrapper">
     <nav class="nav" id="main-nav" aria-label="Main navigation">
       <a href="index.html" class="nav__logo" aria-label="Pilar Meaca home">
-        <img src="icon.svg" alt="Pilar Meaca Logo" class="nav__logo-img" />
+        <img src="images/shared/icon.svg" alt="Pilar Meaca Logo" class="nav__logo-img" />
       </a>
 
       <ul class="nav__links" role="list">
@@ -26,80 +31,150 @@
         <li><a href="/reel" class="nav__link">Reel</a></li>
         <li><a href="/about" class="nav__link">About</a></li>
       </ul>
+
+      <ul class="nav__links nav__filters" role="list" aria-label="Filter projects">
+        <li>
+          <button type="button" class="nav__link" data-work-filter="featured" aria-pressed="false">
+            Featured
+          </button>
+        </li>
+        <li>
+          <button type="button" class="nav__link nav__link--active" data-work-filter="all" aria-pressed="true">
+            All
+          </button>
+        </li>
+      </ul>
     </nav>
   </header>
 
   <main>
     <section class="work-grid" aria-label="Portfolio Projects">
-      
+
       <!-- Item 1: Pixar Fest -->
       <article class="work-item">
         <div class="work-item__image-wrapper">
-          <img src="work_pixar.png" alt="Pixar Fest Project" class="work-item__image work-item__image--full" />
+          <img src="images/work/work_pixar.png" alt="Pixar Fest Project" class="work-item__image work-item__image--full" />
         </div>
         <div class="work-item__info">
           <h2 class="work-item__title">Pixar Fest</h2>
-          <p class="work-item__role">Art Direction, Design &amp; Animation</p>
+          <p class="work-item__role">Art Direction / Design / Animation</p>
         </div>
       </article>
 
       <!-- Item 2: CookUnity -->
-      <article class="work-item">
+      <article class="work-item" data-featured="true">
         <div class="work-item__image-wrapper">
-          <img src="work_taco.png" alt="CookUnity / HelloFresh Sponsorship Project" class="work-item__image work-item__image--inset" />
+          <img src="images/work/work_taco.png" alt="CookUnity / HelloFresh Sponsorship Project"
+            class="work-item__image work-item__image--inset" />
         </div>
         <div class="work-item__info">
           <h2 class="work-item__title">CookUnity / HelloFresh Sponsorship</h2>
-          <p class="work-item__role">art direction &amp; design</p>
+          <p class="work-item__role">art direction / design</p>
         </div>
       </article>
 
       <!-- Item 3: Fanta Sponsorship -->
-      <article class="work-item">
+      <article class="work-item" data-featured="true">
         <div class="work-item__image-wrapper">
-          <img src="work_fanta.png" alt="Fanta Sponsorship Project" class="work-item__image work-item__image--inset" />
+          <img src="images/work/work_fanta.png" alt="Fanta Sponsorship Project" class="work-item__image work-item__image--inset" />
         </div>
         <div class="work-item__info">
           <h2 class="work-item__title">Fanta Sponsorship</h2>
-          <p class="work-item__role">Art Direction &amp; Design</p>
+          <p class="work-item__role">Art Direction / Design</p>
         </div>
       </article>
 
-      <!-- Item 4: Detrás de la Gloria -->
+      <!-- Item 4: DetrÃ¡s de la Gloria -->
       <article class="work-item">
         <div class="work-item__image-wrapper">
-          <img src="gloria_work.png" alt="Detrás de la Gloria Project" class="work-item__image work-item__image--full" />
+          <img src="images/shared/gloria_work.png" alt="DetrÃ¡s de la Gloria Project"
+            class="work-item__image work-item__image--full" />
         </div>
         <div class="work-item__info">
-          <h2 class="work-item__title">Detrás de la Gloria</h2>
-          <p class="work-item__role">Art Direction, Design &amp; Animation</p>
+          <h2 class="work-item__title">DetrÃ¡s de la Gloria</h2>
+          <p class="work-item__role">Art Direction / Design / Animation</p>
         </div>
       </article>
 
       <!-- Item 5: Radio Disney -->
       <article class="work-item">
         <div class="work-item__image-wrapper">
-          <img src="work_radio.png" alt="Radio Disney Project" class="work-item__image work-item__image--inset" />
+          <img src="images/work/work_radio.png" alt="Radio Disney Project" class="work-item__image work-item__image--inset" />
         </div>
         <div class="work-item__info">
           <h2 class="work-item__title">Radio Disney</h2>
-          <p class="work-item__role">Art Direction, Design &amp; Animation</p>
+          <p class="work-item__role">Art Direction / Design / Animation</p>
         </div>
       </article>
 
       <!-- Item 6: Fortnite Sponsorship -->
-      <article class="work-item">
+      <article class="work-item" data-featured="true">
         <div class="work-item__image-wrapper">
-          <img src="work_fornite.png"alt="Fortnite Sponsorship Project" class="work-item__image work-item__image--inset" />
+          <img src="images/work/work_fornite.png" alt="Fortnite Sponsorship Project"
+            class="work-item__image work-item__image--inset" />
         </div>
         <div class="work-item__info">
           <h2 class="work-item__title">Fortnite Sponsorship</h2>
-          <p class="work-item__role">Art Direction &amp; Design</p>
+          <p class="work-item__role">Art Direction / Design</p>
         </div>
       </article>
-      
+
+            <!-- Item 7: In stream Alerts Sponsorship -->
+            <article class="work-item" data-featured="true">
+              <div class="work-item__image-wrapper">
+                <img src="images/work/work_inStream.png" alt="In stream Alerts Sponsorship Project"
+                  class="work-item__image work-item__image--full" />
+              </div>
+              <div class="work-item__info">
+                <h2 class="work-item__title">In stream Alerts Sponsorship</h2>
+                <p class="work-item__role">Art Direction / Design </p>
+              </div>
+            </article>
+
+
+      <!-- Item 8: Promos -->
+      <article class="work-item">
+        <div class="work-item__image-wrapper">
+          <img src="images/shared/gloria_work.png" alt="Promos Project"
+            class="work-item__image work-item__image--full" />
+        </div>
+        <div class="work-item__info">
+          <h2 class="work-item__title">In stream Alerts Sponsorship</h2>
+          <p class="work-item__role">Art Direction / Design / Animation</p>
+        </div>
+      </article>
+
+            <!-- Item 9: Stream Packages & Alerts -->
+            <article class="work-item" data-featured="true">
+              <a href="stream-packages.html" style="display: block; color: inherit; text-decoration: none;">
+                <div class="work-item__image-wrapper">
+                  <img src="images/work/work_streamPack.png" alt="Stream Packages & Alerts Project"
+                    class="work-item__image work-item__image--full" />
+                </div>
+                <div class="work-item__info">
+                  <h2 class="work-item__title">Stream Packages & Alerts</h2>
+                  <p class="work-item__role">Art Direction / Design </p>
+                </div>
+              </a>
+            </article>
+
+      <!-- Item 10: Cap'n Crunch Sponsorship -->
+      <article class="work-item" data-featured="true">
+        <div class="work-item__image-wrapper">
+          <img src="images/work/work_victoria.png" alt="Cap'n Crunch Sponsorship Project"
+            class="work-item__image work-item__image--full" />
+        </div>
+        <div class="work-item__info">
+          <h2 class="work-item__title">Cap'n Crunch Sponsorship</h2>
+          <p class="work-item__role">Art Direction / Design</p>
+        </div>
+      </article>
+
     </section>
   </main>
 
+  <script src="work.js" defer></script>
+
 </body>
+
 </html>
