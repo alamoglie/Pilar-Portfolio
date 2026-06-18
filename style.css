@@ -1368,57 +1368,261 @@ button.nav__link {
 }
 
 /* ==========================================================
-   OTHER PROJECTS SECTION
+   HELLOFRESH & COOKUNITY PAGES
    ========================================================== */
-.other-projects {
+.page-hello-fresh .project-intro--hellofresh {
+  background-color: #FCF9F9;
+  font-family: var(--font-display);
+}
+
+.page-hello-fresh .project-intro--hellofresh .project-intro__title,
+.page-hello-fresh .project-intro--hellofresh .project-intro__meta,
+.page-hello-fresh .project-intro--hellofresh .project-intro__desc,
+.page-hello-fresh .project-intro--hellofresh .project-intro__subheadline {
+  font-family: inherit;
+}
+
+.project-intro__subheadline {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--color-text);
+  opacity: 0.95;
+}
+
+.hellofresh-headline-wrap {
+  width: 100%;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hellofresh-meta {
+  max-width: 1216px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--content-margin);
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: #555555;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.hellofresh-meta__item {
+  margin: 0;
+}
+
+.hellofresh-meta__item strong {
+  color: #111111;
+  font-weight: 600;
+}
+
+.hellofresh-headline-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.theme-section--hellofresh {
   background-color: #ffffff;
-  padding: 32px var(--content-margin) 48px;
+  color: #111111;
+  padding: 0 0 100px;
+}
+
+.hellofresh-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1216px;
+  margin-inline: auto;
+  padding-inline: var(--content-margin);
   box-sizing: border-box;
 }
 
-.other-projects__label {
-  font-family: 'TikTok Sans', var(--font-body);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  color: #111111;
-  margin-bottom: 16px;
+.hellofresh-media {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.hellofresh-media__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hellofresh-media__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1;
+  transition: transform 0.25s var(--ease-out), opacity 0.2s;
+}
+
+.hellofresh-media__play:hover {
+  transform: translate(-50%, -50%) scale(1.08);
   opacity: 0.9;
 }
 
-.other-projects__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+.hellofresh-media__play img {
+  width: clamp(54px, 8vw, 88px);
+  height: auto;
+  display: block;
 }
 
-.other-projects__card {
+.cookunity-headline {
+  width: 100%;
+}
+
+.cookunity-headline__img {
+  width: 100%;
+  height: auto;
   display: block;
-  text-decoration: none;
-  border-radius: 6px;
-  overflow: hidden;
+}
+
+.cookunity-banner {
+  width: 100%;
+  line-height: 0;
+}
+
+.cookunity-banner__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.theme-section--cookunity {
+  background-color: #faf8f5;
+  color: #111111;
+  margin-top: 2rem;
+  padding: 0 0 100px;
+}
+
+.cookunity-meta {
+  max-width: 1216px;
+  margin-inline: auto;
+  padding: 48px var(--content-margin) 0;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: #555555;
+  margin-bottom: 0;
+  text-align: left;
+  background-color: #faf8f5;
+}
+
+.cookunity-meta__item {
+  margin: 0;
+}
+
+.cookunity-meta__item strong {
+  color: #111111;
+  font-weight: 600;
+}
+
+.cook-media {
   position: relative;
+  max-width: 1216px;
+  margin-inline: auto;
+  padding-inline: var(--content-margin);
+  box-sizing: border-box;
 }
 
-.other-projects__card-img-wrap {
+.cook-media__image {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background: #111;
-}
-
-.other-projects__card-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
-  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              opacity 0.3s ease;
+  border-radius: 4px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
-.other-projects__card:hover .other-projects__card-img {
-  transform: scale(1.04);
-  opacity: 0.88;
+.cook-media__play {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1;
+  transition: transform 0.25s var(--ease-out), opacity 0.2s;
+}
+
+.cook-media__play:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  opacity: 0.9;
+}
+
+.cook-media__play img {
+  width: clamp(54px, 8vw, 88px);
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================
+   OTHER PROJECTS — hello-fresh page
+   ========================================================== */
+.page-hello-fresh .other-projects {
+  margin-inline: 1rem;
+  width: auto;
+  background-color: transparent;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-hello-fresh .other-projects__label {
+  font-family: var(--font-display);
+  font-size: clamp(14px, 1.111vw, 16px);
+  font-weight: 400;
+  text-transform: none;
+  text-align: left;
+  color: #111111;
+  background-color: transparent;
+  padding: 64px 0 28px;
+  margin: 0;
+}
+
+.page-hello-fresh .other-projects__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  width: 100%;
+  background-color: #000000;
+}
+
+.page-hello-fresh .other-projects__card {
+  display: block;
+  overflow: hidden;
+  border-radius: 0;
+  transition: opacity 0.2s var(--ease-out);
+}
+
+.page-hello-fresh .other-projects__card:hover {
+  opacity: 0.92;
+}
+
+.page-hello-fresh .other-projects__card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 /* ==========================================================
@@ -1486,10 +1690,10 @@ button.nav__link {
 
 /* Responsive */
 @media (max-width: 600px) {
-  .other-projects__grid {
+  .page-hello-fresh .other-projects__grid {
     grid-template-columns: 1fr;
-    gap: 8px;
   }
+
   .site-footer__top,
   .site-footer__bottom {
     flex-direction: column;
