@@ -1706,14 +1706,12 @@ button.nav__link {
 /* ==========================================================
    CAP'N CRUNCH PAGE
    ========================================================== */
-.capn-hero {
+.capn-header {
   position: relative;
   width: 100%;
-  overflow: visible;
-  background-color: #ffffff;
 }
 
-.capn-hero__sky {
+.capn-hero {
   width: 100%;
   line-height: 0;
 }
@@ -1725,27 +1723,73 @@ button.nav__link {
 }
 
 .capn-hero__figure {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  margin: clamp(-24px, -3vw, -8px) auto 0;
-  padding: 0 var(--content-margin);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 3;
+  width: min(260px, 39vw);
+  margin: 0;
+  padding: 0;
+  transform: translate(calc(-50% - 3rem), 50%);
+  pointer-events: none;
 }
 
 .capn-hero__capn {
-  width: min(480px, 72vw);
+  width: 100%;
   height: auto;
   display: block;
   mix-blend-mode: screen;
-  margin-bottom: clamp(-100px, -12vw, -64px);
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.18));
 }
 
 .page-capn-crunch .project-intro--capn {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   background-color: #ffffff;
-  padding-top: clamp(96px, 14vw, 140px);
+  padding-top: clamp(60px, 8vw, 100px);
+}
+
+.page-capn-crunch .project-intro--capn .project-intro__grid {
+  gap: clamp(64px, 10vw, 160px);
+}
+
+.capn-section {
+  width: 100%;
+}
+
+.capn-section__media {
+  position: relative;
+  width: 100%;
+}
+
+.capn-section__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.capn-section__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1;
+  transition: transform 0.25s var(--ease-out), opacity 0.2s;
+}
+
+.capn-section__play:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+  opacity: 0.92;
+}
+
+.capn-section__play img {
+  width: clamp(56px, 9vw, 100px);
+  height: auto;
+  display: block;
 }
 
 .page-capn-crunch .project-intro--capn,
@@ -1756,13 +1800,134 @@ button.nav__link {
   font-family: var(--font-display);
 }
 
+.capn-takeover {
+  width: 100%;
+}
+
+.capn-takeover__wrap {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.capn-takeover__bkg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.capn-takeover__copy {
+  position: absolute;
+  top: clamp(32px, 5vw, 64px);
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--content-margin);
+  box-sizing: border-box;
+  line-height: normal;
+}
+
+.capn-takeover__logo {
+  width: 280px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  mix-blend-mode: screen;
+  margin-bottom: clamp(20px, 3vw, 32px);
+}
+
+.capn-takeover__text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: clamp(14px, 1.25vw, 18px);
+  font-weight: 400;
+  line-height: 1.55;
+  color: #ffffff;
+  max-width: 640px;
+  margin: 0 0 1em;
+}
+
+.capn-takeover__text:last-child {
+  margin-bottom: 0;
+}
+
+.capn-takeover__c4d {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 1;
+}
+
+.capn-scenes {
+  width: 100%;
+  background-color: #1568b5;
+  padding: 6px 0;
+  box-sizing: border-box;
+}
+
+.capn-scenes__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.capn-scenes__item {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.capn-scenes__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.capn-scenes__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1;
+  transition: transform 0.25s var(--ease-out), opacity 0.2s;
+}
+
+.capn-scenes__play:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+  opacity: 0.92;
+}
+
+.capn-scenes__play img {
+  width: clamp(56px, 9vw, 100px);
+  height: auto;
+  display: block;
+}
+
 @media (max-width: 600px) {
-  .capn-hero__capn {
-    width: min(360px, 88vw);
-    margin-bottom: -72px;
+  .capn-hero__figure {
+    width: min(170px, 45vw);
   }
 
   .page-capn-crunch .project-intro--capn {
-    padding-top: 88px;
+    padding-top: clamp(44px, 11vw, 60px);
+  }
+
+  .capn-section__play img {
+    width: clamp(48px, 12vw, 72px);
+  }
+
+  .capn-scenes__play img {
+    width: clamp(48px, 12vw, 72px);
   }
 }
