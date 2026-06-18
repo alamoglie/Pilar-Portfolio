@@ -1702,3 +1702,67 @@ button.nav__link {
     gap: 8px;
   }
 }
+
+/* ==========================================================
+   CAP'N CRUNCH PAGE
+   ========================================================== */
+.capn-hero {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  background-color: #ffffff;
+}
+
+.capn-hero__sky {
+  width: 100%;
+  line-height: 0;
+}
+
+.capn-hero__logo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.capn-hero__figure {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  margin: clamp(-24px, -3vw, -8px) auto 0;
+  padding: 0 var(--content-margin);
+}
+
+.capn-hero__capn {
+  width: min(480px, 72vw);
+  height: auto;
+  display: block;
+  mix-blend-mode: screen;
+  margin-bottom: clamp(-100px, -12vw, -64px);
+}
+
+.page-capn-crunch .project-intro--capn {
+  position: relative;
+  z-index: 1;
+  background-color: #ffffff;
+  padding-top: clamp(96px, 14vw, 140px);
+}
+
+.page-capn-crunch .project-intro--capn,
+.page-capn-crunch .project-intro--capn .project-intro__title,
+.page-capn-crunch .project-intro--capn .project-intro__meta,
+.page-capn-crunch .project-intro--capn .project-intro__desc,
+.page-capn-crunch .project-intro--capn .project-intro__subheadline {
+  font-family: var(--font-display);
+}
+
+@media (max-width: 600px) {
+  .capn-hero__capn {
+    width: min(360px, 88vw);
+    margin-bottom: -72px;
+  }
+
+  .page-capn-crunch .project-intro--capn {
+    padding-top: 88px;
+  }
+}
