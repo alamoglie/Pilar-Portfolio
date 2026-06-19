@@ -36,17 +36,21 @@
 
   <main class="project-container layout--full">
 
-    <!-- ── SECTION 1: HERO (Limes) ── -->
-    <section class="project-hero layout--full" aria-label="CookUnity / HelloFresh preview">
-      <img src="images/hello-fresh/HelloFresh_headline.png" alt="CookUnity / HelloFresh Sponsorship"
-        class="project-hero__image" />
-    </section>
+    <!-- ── SECTION 1: HERO ── -->
+    <div class="hellofresh-page-hero layout--bleed" aria-label="HelloFresh sponsorship preview">
+      <img src="images/hello-fresh/HelloFresh_headline.png" alt="HelloFresh sponsorship"
+        class="hellofresh-page-hero__img" />
+    </div>
 
     <!-- ── SECTION 2: INTRO ── -->
     <section class="project-intro project-intro--hellofresh">
       <div class="project-intro__grid">
         <div class="project-intro__sidebar">
-          <h1 class="project-intro__title">CookUnity / HelloFresh<br>Sponsorship</h1>
+          <h1 class="project-intro__title">HelloFresh / CookUnity<br>Sponsorship</h1>
+          <div class="project-intro__meta">
+            <p class="project-intro__meta-item">art direction / design</p>
+            <p class="project-intro__meta-item">Client: StreamElements</p>
+          </div>
         </div>
 
         <div class="project-intro__desc-block">
@@ -60,15 +64,10 @@
     </section>
 
     <!-- ── SECTION 3: HELLOFRESH MAIN THEME ── -->
-    <section class="theme-section theme-section--hellofresh" aria-label="HelloFresh Campaign">
-      
-      <!-- HelloFresh Meta & Headline Image -->
-      <div class="hellofresh-headline-wrap">
-        <div class="hellofresh-meta">
-          <p class="hellofresh-meta__item"><strong>HelloFresh</strong></p>
-          <p class="hellofresh-meta__item">Role: art direction / design</p>
-          <p class="hellofresh-meta__item">Client: StreamElements</p>
-        </div>
+    <section class="theme-section theme-section--hellofresh layout--full" aria-label="HelloFresh Campaign">
+
+      <!-- HelloFresh Headline Image -->
+      <div class="hellofresh-headline-wrap layout--full">
         <img src="images/hello-fresh/HF_bkg.png" alt="HelloFresh — A free highprotein item for life + up to 10 meals"
           class="hellofresh-headline-img" />
       </div>
@@ -106,48 +105,42 @@
     </section>
 
     <!-- ── COOKUNITY HEADLINE ── -->
-    <div class="cookunity-headline">
+    <div class="cookunity-headline layout--bleed">
       <img src="images/hello-fresh/Cook_headline.png" alt="CookUnity — meals well-made"
         class="cookunity-headline__img" />
     </div>
 
-    <div class="cookunity-meta">
-      <p class="cookunity-meta__item"><strong>CookUnity</strong></p>
-      <p class="cookunity-meta__item">Role: art direction / design</p>
-      <p class="cookunity-meta__item">Client: StreamElements</p>
-    </div>
+    <div class="cookunity-meta" aria-hidden="true"></div>
 
     <!-- ── COOKUNITY BACKGROUND BANNER ── -->
-    <div class="cookunity-banner layout--full">
+    <div class="cookunity-banner layout--bleed">
       <img src="images/hello-fresh/Cook_bkg.png" alt="" class="cookunity-banner__img" aria-hidden="true" />
     </div>
 
     <!-- ── SECTION 5: COOKUNITY MAIN THEME ── -->
     <section class="theme-section theme-section--cookunity" aria-label="CookUnity Campaign">
 
-      <div class="cook-media layout--narrow">
-        <img src="images/hello-fresh/Cook_videos.png" alt="CookUnity campaign assets and stream scenes"
-          class="cook-media__image" />
-        <button type="button" class="cook-media__play" aria-label="Play CookUnity preview">
-          <img src="images/stream-packages/Play-btn.svg" alt="" />
-        </button>
+      <div class="cookunity-stack layout--narrow">
+        <div class="cook-media">
+          <img src="images/hello-fresh/Cook_videos.png" alt="CookUnity campaign assets and stream scenes"
+            class="cook-media__image" />
+          <button type="button" class="cook-media__play" aria-label="Play CookUnity preview">
+            <img src="images/stream-packages/Play-btn.svg" alt="" />
+          </button>
+        </div>
+
+        <div class="cook-media">
+          <img src="images/hello-fresh/Cook_videos_2.png" alt="CookUnity campaign assets and stream scenes"
+            class="cook-media__image" />
+          <button type="button" class="cook-media__play" aria-label="Play CookUnity preview 2">
+            <img src="images/stream-packages/Play-btn.svg" alt="" />
+          </button>
+        </div>
       </div>
 
     </section>
 
-    <!-- ── OTHER PROJECTS ── -->
-    <section class="other-projects" aria-label="Other projects">
-      <p class="other-projects__label">Other projects</p>
-
-      <div class="other-projects__grid">
-        <a href="work.html" class="other-projects__card" aria-label="Victoria — view project">
-          <img src="images/other-projects/vicyori.png" alt="Victoria project" class="other-projects__card-img" />
-        </a>
-        <a href="work.html" class="other-projects__card" aria-label="Radio Disney — view project">
-          <img src="images/other-projects/disney.png" alt="Radio Disney project" class="other-projects__card-img" />
-        </a>
-      </div>
-    </section>
+    <div data-component="other-projects"></div>
 
     <!-- ── SITE FOOTER ── -->
     <footer class="site-footer">
@@ -179,6 +172,7 @@
     setInterval(updateTime, 30000);
   </script>
 
+  <script src="components.js" defer></script>
   <script src="main.js"></script>
 </body>
 

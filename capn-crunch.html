@@ -70,7 +70,7 @@
     </section>
 
     <!-- ── SECTION 2 ── -->
-    <section class="capn-section" aria-label="Cap'n Crunch campaign assets">
+    <section class="capn-section layout--wide" aria-label="Cap'n Crunch campaign assets">
       <div class="capn-section__media">
         <img src="images/capn-crunch/Section_02.png" alt="Cap'n Crunch sponsorship campaign"
           class="capn-section__image" />
@@ -81,8 +81,8 @@
     </section>
 
     <!-- ── SECTION 3: TAKEOVER ── -->
-    <section class="capn-takeover" aria-label="Takeover">
-      <div class="capn-takeover__wrap">
+    <section class="capn-takeover layout--wide" aria-label="Takeover">
+      <div class="capn-takeover__header">
         <img src="images/capn-crunch/CapnCrunch_Takeover_bkg%201.png" alt=""
           class="capn-takeover__bkg" aria-hidden="true" />
         <div class="capn-takeover__copy">
@@ -91,13 +91,16 @@
           <p class="capn-takeover__text">A Branded full-screen animated takeover that temporarily takes over the live stream to deliver a high-impact sponsorship moment.</p>
           <p class="capn-takeover__text">Activated through a chat command or automatically triggered on a scheduled timer.</p>
         </div>
+      </div>
+
+      <div class="capn-takeover__stack layout--wide">
         <img src="images/capn-crunch/CapnCrunch_C4D%201.png" alt="Cap'n Crunch 3D character poses"
-          class="capn-takeover__c4d" />
+          class="capn-takeover__image" />
       </div>
     </section>
 
     <!-- ── SECTIONS 4–6: BE THE CAP'N ── -->
-    <section class="capn-scenes" aria-label="Be the Cap'n campaign scenes">
+    <section class="capn-scenes layout--wide" aria-label="Be the Cap'n campaign scenes">
       <div class="capn-scenes__stack">
         <div class="capn-scenes__item">
           <img src="images/capn-crunch/Section_04.png" alt="Be the Cap'n — salute scene"
@@ -131,13 +134,74 @@
         <div class="capn-alerts__content">
           <img src="images/capn-crunch/CapnCrunch_Alerts_txt.png" alt="Alerts"
             class="capn-alerts__title" />
-          <p class="capn-alerts__text">Animated on-stream graphics that provide real-time visual feedback when key stream events occur.</p>
-          <p class="capn-alerts__text">Alerts are dynamically populated with live data, displaying viewer names and event information such as follows, subscriptions, donations, and other community interactions.</p>
+          <p class="capn-alerts__text">Animated on-stream graphics that provide<br>
+            real-time visual feedback when key stream events occur.</p>
+          <p class="capn-alerts__text">Alerts are dynamically populated with live data, displaying viewer<br>
+            names and event information such as follows,subscriptions, donations,<br>
+            and other community interactions.</p>
         </div>
         <img src="images/capn-crunch/money.png" alt="" class="capn-alerts__icon capn-alerts__icon--money"
           aria-hidden="true" />
       </div>
     </section>
+
+    <!-- ── ALERTS MEDIA ── -->
+    <section class="capn-alerts-media" aria-label="Cap'n Crunch alerts previews">
+      <div class="capn-alerts-media__stack layout--wide">
+        <div class="capn-alerts-media__item">
+          <img src="images/capn-crunch/CapnCrunch_alerts%201.png" alt="Cap'n Crunch alerts preview 1"
+            class="capn-alerts-media__image" />
+          <button type="button" class="capn-alerts-media__play" aria-label="Play alerts preview 1">
+            <img src="images/stream-packages/Play-btn.svg" alt="" />
+          </button>
+        </div>
+        <div class="capn-alerts-media__item">
+          <img src="images/capn-crunch/CapnCrunch_alerts%202.png" alt="Cap'n Crunch alerts preview 2"
+            class="capn-alerts-media__image" />
+          <button type="button" class="capn-alerts-media__play" aria-label="Play alerts preview 2">
+            <img src="images/stream-packages/Play-btn.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BRANDED SCENES ── -->
+    <section class="capn-branded-scenes layout--narrow" aria-label="Branded Scenes">
+      <div class="capn-branded-scenes__intro">
+        <img src="images/capn-crunch/Branded%20Scenes.png" alt="Branded Scenes"
+          class="capn-branded-scenes__title" />
+        <p class="capn-branded-scenes__text">A collection of animated broadcast graphics used as waiting<br>
+          and transition screens throughout the live stream experience.</p>
+        <p class="capn-branded-scenes__text">The package includes three scenes:<br>
+          Starting Soon, Be Right Back, Stream Ended.</p>
+      </div>
+
+      <div class="capn-branded-scenes__stack">
+        <div class="capn-branded-scenes__item">
+          <img src="images/capn-crunch/scenes_1.png" alt="Cap'n Crunch — Starting Soon"
+            class="capn-branded-scenes__image" />
+          <button type="button" class="capn-branded-scenes__play" aria-label="Play Starting Soon preview">
+            <img src="images/stream-packages/Play-btn.svg" alt="" />
+          </button>
+        </div>
+        <div class="capn-branded-scenes__item">
+          <img src="images/capn-crunch/scenes_2.png" alt="Cap'n Crunch — Be Right Back"
+            class="capn-branded-scenes__image" />
+          <button type="button" class="capn-branded-scenes__play" aria-label="Play Be Right Back preview">
+            <img src="images/stream-packages/Play-btn.svg" alt="" />
+          </button>
+        </div>
+        <div class="capn-branded-scenes__item">
+          <img src="images/capn-crunch/scenes_3.png" alt="Cap'n Crunch — Stream Ended"
+            class="capn-branded-scenes__image" />
+          <button type="button" class="capn-branded-scenes__play" aria-label="Play Stream Ended preview">
+            <img src="images/stream-packages/Play-btn.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div data-component="other-projects"></div>
 
     <!-- ── SITE FOOTER ── -->
     <footer class="site-footer">
@@ -169,6 +233,7 @@
     setInterval(updateTime, 30000);
   </script>
 
+  <script src="components.js" defer></script>
   <script src="main.js"></script>
 </body>
 
