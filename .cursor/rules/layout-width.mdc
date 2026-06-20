@@ -13,5 +13,6 @@ alwaysApply: false
 | **wide** | default / `layout--wide` | centered shell, max 1920px | Page column |
 | **narrow** | `layout--narrow` | `min(1400px, 72.9% of shell)` centered | Media stacks, text blocks |
 
+- **Responsive cap:** below **2050px** viewport, any element with `layout--wide` or `layout--narrow` (including `img` with those classes) must not exceed **`90vw`** (`--layout-viewport-cap`).
 - `body` uses `width: min(100%, 1920px)` + `margin-inline: auto` — equal gutters on ultrawide (`html` background shows both sides).
 - **Do not** put `layout--bleed` on whole sections with mixed content — only headlines/heroes. Section bg uses `::before` at `100vw` where needed.

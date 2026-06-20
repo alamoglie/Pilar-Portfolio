@@ -30,6 +30,8 @@
 
   --layout-full-width: 100%;
   --layout-bleed-width: 100vw;
+  --layout-cap-breakpoint: 2050px;
+  --layout-viewport-cap: 90vw;
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -548,6 +550,22 @@ button.nav__link {
   max-width: 100%;
   margin-inline: auto;
   box-sizing: border-box;
+}
+
+/* Below 2050px: wide/narrow containers and tagged images cap at 90vw */
+@media (max-width: 2049px) {
+  .layout--wide,
+  .hitman-talk.layout--wide,
+  .astro-talk.layout--wide,
+  .layout--narrow,
+  img.layout--wide,
+  img.layout--narrow {
+    max-width: var(--layout-viewport-cap);
+  }
+
+  .layout--narrow {
+    width: min(var(--layout-narrow-width), var(--layout-viewport-cap));
+  }
 }
 
 /* -- Section 1: full-width hero image -- */
