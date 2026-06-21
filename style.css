@@ -2647,10 +2647,14 @@ html:has(body.page-dark) {
 .fanta-branded__stack {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 0;
   width: min(100%, var(--layout-narrow-max), 80%);
   max-width: min(var(--layout-narrow-max), 80%);
   margin-inline: auto;
+}
+
+.fanta-branded__item:not(:last-child) {
+  margin-bottom: 7.14%;
 }
 
 .fanta-branded__item {
