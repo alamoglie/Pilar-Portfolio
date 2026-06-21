@@ -2648,8 +2648,8 @@ html:has(body.page-dark) {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  width: min(100%, var(--layout-narrow-max));
-  max-width: var(--layout-narrow-max);
+  width: min(100%, var(--layout-narrow-max), 80%);
+  max-width: min(var(--layout-narrow-max), 80%);
   margin-inline: auto;
 }
 
