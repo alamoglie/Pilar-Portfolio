@@ -2476,6 +2476,7 @@ html:has(body.page-dark) {
   position: relative;
   width: 100%;
   line-height: 0;
+  margin-bottom: 1.7%;
 }
 
 .fanta-takeover__header-bg {
@@ -2485,6 +2486,7 @@ html:has(body.page-dark) {
 }
 
 .fanta-takeover__header-content {
+  container-type: inline-size;
   position: absolute;
   inset: 0;
   display: flex;
@@ -2497,7 +2499,7 @@ html:has(body.page-dark) {
 }
 
 .fanta-takeover__title {
-  width: 180px;
+  width: 16.5cqw;
   max-width: 100%;
   height: auto;
   display: block;
@@ -2506,12 +2508,16 @@ html:has(body.page-dark) {
 
 .fanta-takeover__text {
   font-family: 'Nunito Sans', sans-serif;
-  font-size: clamp(13px, 1.15vw, 16px);
-  font-weight: 400;
+  font-size: 1.6cqw;
+  font-weight: 600;
   line-height: 1.5;
   color: #ffffff;
-  max-width: 520px;
+  max-width: none;
   margin: 0;
+}
+
+.fanta-takeover__line {
+  display: block;
 }
 
 .fanta-takeover__text + .fanta-takeover__text {
@@ -2522,6 +2528,7 @@ html:has(body.page-dark) {
   position: relative;
   width: 100%;
   line-height: 0;
+  margin-bottom: 1.7%;
 }
 
 .fanta-takeover__video {
@@ -2559,6 +2566,14 @@ html:has(body.page-dark) {
     padding: clamp(28px, 8vw, 40px) clamp(20px, 6vw, 32px);
   }
 
+  .fanta-takeover__text {
+    max-width: 100%;
+  }
+
+  .fanta-takeover__line {
+    display: inline;
+  }
+
   .fanta-takeover__play img {
     width: clamp(48px, 12vw, 72px);
   }
@@ -2584,6 +2599,7 @@ html:has(body.page-dark) {
 }
 
 .fanta-branded__header-content {
+  container-type: inline-size;
   position: absolute;
   inset: 0;
   display: flex;
@@ -2596,7 +2612,7 @@ html:has(body.page-dark) {
 }
 
 .fanta-branded__title {
-  width: clamp(220px, 32vw, 380px);
+  width: 29cqw;
   max-width: 100%;
   height: auto;
   display: block;
@@ -2605,12 +2621,16 @@ html:has(body.page-dark) {
 
 .fanta-branded__text {
   font-family: 'Nunito Sans', sans-serif;
-  font-size: clamp(13px, 1.15vw, 16px);
+  font-size: 1.6cqw;
   font-weight: 600;
   line-height: 1.5;
-  color: #101840;
-  max-width: 520px;
+  color: #16206F;
+  max-width: none;
   margin: 0;
+}
+
+.fanta-branded__line {
+  display: block;
 }
 
 .fanta-branded__text + .fanta-branded__text {
@@ -2698,6 +2718,14 @@ html:has(body.page-dark) {
     padding: clamp(28px, 8vw, 40px) clamp(20px, 6vw, 32px);
   }
 
+  .fanta-branded__text {
+    max-width: 100%;
+  }
+
+  .fanta-branded__line {
+    display: inline;
+  }
+
   .fanta-branded__play img {
     width: clamp(48px, 12vw, 72px);
   }
@@ -2747,7 +2775,7 @@ html:has(body.page-dark) {
   font-size: clamp(13px, 1.15vw, 16px);
   font-weight: 600;
   line-height: 1.5;
-  color: #101840;
+  color: #16206F;
   max-width: 560px;
   margin: 0;
 }
