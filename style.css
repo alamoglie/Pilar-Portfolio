@@ -2618,16 +2618,30 @@ html:has(body.page-dark) {
 }
 
 .fanta-branded__videos {
-  width: min(100vw, var(--site-max-width));
-  max-width: var(--site-max-width);
-  margin-inline: calc(50% - min(50vw, var(--site-max-width) / 2));
+  position: relative;
+  isolation: isolate;
+  background-color: #0d1a3a;
+  padding: clamp(24px, 3vw, 40px) clamp(20px, 4vw, 48px) clamp(32px, 4vw, 56px);
+  box-sizing: border-box;
+}
+
+.fanta-branded__videos::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background-color: #0d1a3a;
   background-image: url('images/fanta/branded_videos_bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  padding: clamp(24px, 3vw, 40px) clamp(20px, 4vw, 48px) clamp(32px, 4vw, 56px);
-  box-sizing: border-box;
+}
+
+.fanta-branded__videos.layout--wide {
+  width: 100%;
+  max-width: var(--site-max-width);
+  margin-inline: auto;
 }
 
 .fanta-branded__stack {
