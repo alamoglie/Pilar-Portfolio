@@ -1442,8 +1442,8 @@ button.nav__link {
 
 .other-projects__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
   width: 100%;
   background-color: #000000;
 }
@@ -1451,15 +1451,47 @@ button.nav__link {
 .other-projects__card {
   display: block;
   overflow: hidden;
-  transition: opacity 0.2s var(--ease-out);
-}
-
-.other-projects__card:hover {
-  opacity: 0.92;
+  cursor: none;
 }
 
 .other-projects__card-img {
   width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter 0.35s var(--ease-out);
+}
+
+.other-projects__card:hover .other-projects__card-img {
+  filter: grayscale(0%);
+}
+
+.other-projects-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: clamp(52px, 4.5vw, 72px);
+  height: clamp(52px, 4.5vw, 72px);
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%) scale(0.85);
+  opacity: 0;
+  transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out);
+}
+
+.other-projects-cursor--visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.other-projects-cursor img {
+  width: 46%;
   height: auto;
   display: block;
 }
@@ -1558,7 +1590,7 @@ html:has(body.page-fanta) {
 
 .page-hello-fresh .project-intro--hellofresh::before,
 .page-fanta .project-intro--hellofresh::before,
-.page-capn-crunch .project-intro--capn::before {
+.page-capn-crunch .project-intro--hellofresh::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1574,7 +1606,7 @@ html:has(body.page-fanta) {
 
 .page-hello-fresh .project-intro--hellofresh,
 .page-fanta .project-intro--hellofresh,
-.page-capn-crunch .project-intro--capn {
+.page-capn-crunch .project-intro--hellofresh {
   position: relative;
   isolation: isolate;
   background-color: transparent;
@@ -1585,13 +1617,13 @@ html:has(body.page-fanta) {
   container-type: inline-size;
 }
 
-.page-capn-crunch .project-intro--capn {
+.page-capn-crunch .project-intro--hellofresh {
   z-index: 2;
 }
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__grid,
 .page-fanta .project-intro--hellofresh .project-intro__grid,
-.page-capn-crunch .project-intro--capn .project-intro__grid {
+.page-capn-crunch .project-intro--hellofresh .project-intro__grid {
   width: 83.333333333%;
   max-width: 1600px;
   margin-inline: auto;
@@ -1611,17 +1643,17 @@ html:has(body.page-fanta) {
 .page-fanta .project-intro--hellofresh .project-intro__meta-item,
 .page-fanta .project-intro--hellofresh .project-intro__desc,
 .page-fanta .project-intro--hellofresh .project-intro__subheadline,
-.page-capn-crunch .project-intro--capn .project-intro__title,
-.page-capn-crunch .project-intro--capn .project-intro__meta,
-.page-capn-crunch .project-intro--capn .project-intro__meta-item,
-.page-capn-crunch .project-intro--capn .project-intro__desc,
-.page-capn-crunch .project-intro--capn .project-intro__subheadline {
+.page-capn-crunch .project-intro--hellofresh .project-intro__title,
+.page-capn-crunch .project-intro--hellofresh .project-intro__meta,
+.page-capn-crunch .project-intro--hellofresh .project-intro__meta-item,
+.page-capn-crunch .project-intro--hellofresh .project-intro__desc,
+.page-capn-crunch .project-intro--hellofresh .project-intro__subheadline {
   font-family: var(--font-tiktok);
 }
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__title,
 .page-fanta .project-intro--hellofresh .project-intro__title,
-.page-capn-crunch .project-intro--capn .project-intro__title {
+.page-capn-crunch .project-intro--hellofresh .project-intro__title {
   color: #000;
   font-size: 2.604166667cqw;
   font-weight: 450;
@@ -1634,8 +1666,8 @@ html:has(body.page-fanta) {
 .page-hello-fresh .project-intro--hellofresh .project-intro__meta-item,
 .page-fanta .project-intro--hellofresh .project-intro__meta,
 .page-fanta .project-intro--hellofresh .project-intro__meta-item,
-.page-capn-crunch .project-intro--capn .project-intro__meta,
-.page-capn-crunch .project-intro--capn .project-intro__meta-item {
+.page-capn-crunch .project-intro--hellofresh .project-intro__meta,
+.page-capn-crunch .project-intro--hellofresh .project-intro__meta-item {
   font-size: 1.145833333cqw;
   font-weight: 350;
   line-height: 1.4;
@@ -1644,13 +1676,13 @@ html:has(body.page-fanta) {
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__meta,
 .page-fanta .project-intro--hellofresh .project-intro__meta,
-.page-capn-crunch .project-intro--capn .project-intro__meta {
+.page-capn-crunch .project-intro--hellofresh .project-intro__meta {
   gap: 0;
 }
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__subheadline,
 .page-fanta .project-intro--hellofresh .project-intro__subheadline,
-.page-capn-crunch .project-intro--capn .project-intro__subheadline {
+.page-capn-crunch .project-intro--hellofresh .project-intro__subheadline {
   text-transform: none;
   letter-spacing: normal;
   color: #1E1E1E;
@@ -1664,7 +1696,7 @@ html:has(body.page-fanta) {
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__desc,
 .page-fanta .project-intro--hellofresh .project-intro__desc,
-.page-capn-crunch .project-intro--capn .project-intro__desc {
+.page-capn-crunch .project-intro--hellofresh .project-intro__desc {
   color: #1E1E1E;
   font-size: 1.302083333cqw;
   font-weight: 450;
@@ -1948,8 +1980,8 @@ html:has(body.page-fanta) {
 
 .project-container .other-projects__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
   width: 100%;
   background-color: transparent;
 }
@@ -1958,11 +1990,7 @@ html:has(body.page-fanta) {
   display: block;
   overflow: hidden;
   border-radius: 0;
-  transition: opacity 0.2s var(--ease-out);
-}
-
-.project-container .other-projects__card:hover {
-  opacity: 0.92;
+  cursor: none;
 }
 
 .project-container .other-projects__card-img {
@@ -1970,6 +1998,12 @@ html:has(body.page-fanta) {
   height: auto;
   display: block;
   object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.35s var(--ease-out);
+}
+
+.project-container .other-projects__card:hover .other-projects__card-img {
+  filter: grayscale(0%);
 }
 
 /* ==========================================================
@@ -2149,17 +2183,23 @@ html:has(body.page-dark) {
 
 .capn-section {
   width: 100%;
+  margin-bottom: 16px;
 }
 
 .capn-section__media {
   position: relative;
   width: 100%;
+  line-height: 0;
 }
 
 .capn-section__image {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.capn-section video.capn-section__image {
+  border-radius: 0;
 }
 
 .capn-section__play {
@@ -2187,26 +2227,37 @@ html:has(body.page-dark) {
 }
 
 .capn-takeover {
-  width: 100%;
-  background-color: var(--color-bg-white);
-}
-
-.capn-takeover__header {
   position: relative;
-  padding: clamp(48px, 6vw, 80px) var(--content-margin) clamp(40px, 5vw, 64px);
+  isolation: isolate;
+  width: 100%;
   overflow: hidden;
-  box-sizing: border-box;
+  background-color: #1a4a8c;
 }
 
 .capn-takeover__bkg {
   position: absolute;
-  inset: 0;
-  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
   height: 100%;
+  transform: translateX(-50%);
   object-fit: cover;
   object-position: center top;
   z-index: 0;
   pointer-events: none;
+}
+
+.capn-takeover__header,
+.capn-takeover__stack,
+.capn-takeover .capn-scenes__stack {
+  position: relative;
+  z-index: 1;
+}
+
+.capn-takeover__header {
+  padding: clamp(48px, 6vw, 80px) var(--content-margin) clamp(40px, 5vw, 64px);
+  box-sizing: border-box;
 }
 
 .capn-takeover__copy {
@@ -2217,10 +2268,13 @@ html:has(body.page-dark) {
   align-items: center;
   text-align: center;
   line-height: normal;
+  width: 100%;
+  max-width: calc(1000 * 100vw / 1920);
+  margin-inline: auto;
 }
 
 .capn-takeover__logo {
-  width: 280px;
+  width: calc(278 * 100vw / 1920);
   max-width: 100%;
   height: auto;
   display: block;
@@ -2228,13 +2282,18 @@ html:has(body.page-dark) {
 }
 
 .capn-takeover__text {
+  width: 100%;
+  color: #FFF;
+  text-align: center;
   font-family: 'Open Sans', sans-serif;
-  font-size: clamp(14px, 1.25vw, 18px);
-  font-weight: 400;
-  line-height: 1.55;
-  color: #184C84;
-  max-width: 640px;
-  margin: 0 0 1em;
+  font-size: calc(26 * 100vw / 1920);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: calc(0.26 * 100vw / 1920);
+  text-transform: capitalize;
+  max-width: 100%;
+  margin: 0 0 calc(36.4 * 100vw / 1920);
 }
 
 .capn-takeover__text:last-child {
@@ -2251,9 +2310,14 @@ html:has(body.page-dark) {
   display: block;
 }
 
-.capn-scenes {
-  width: 100%;
-  background-color: transparent;
+.capn-takeover .capn-scenes__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: min(100%, var(--layout-narrow-max), 80%);
+  max-width: min(var(--layout-narrow-max), 80%);
+  margin-inline: auto;
+  margin-bottom: 3rem;
   padding: 6px 0;
   box-sizing: border-box;
 }
@@ -2275,6 +2339,10 @@ html:has(body.page-dark) {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.capn-scenes video.capn-scenes__image {
+  border-radius: 0;
 }
 
 .capn-scenes__play {
@@ -2329,7 +2397,7 @@ html:has(body.page-dark) {
 }
 
 .capn-alerts__title {
-  width: clamp(150px, 13vw, 188px);
+  width: calc(188 * 100vw / 1920);
   max-width: 100%;
   height: auto;
   display: block;
@@ -2359,12 +2427,12 @@ html:has(body.page-dark) {
 }
 
 .capn-alerts__icon--star {
-  width: clamp(88px, 9vw, 123px);
+  width: calc(130 * 100vw / 1920);
   max-width: 100%;
 }
 
 .capn-alerts__icon--money {
-  width: clamp(54px, 5.5vw, 75px);
+  width: calc(83 * 100vw / 1920);
   max-width: 100%;
 }
 
@@ -2392,6 +2460,10 @@ html:has(body.page-dark) {
   display: block;
 }
 
+.capn-alerts-media video.capn-alerts-media__image {
+  border-radius: 0;
+}
+
 .capn-alerts-media__play {
   position: absolute;
   top: 50%;
@@ -2417,9 +2489,28 @@ html:has(body.page-dark) {
 }
 
 .capn-branded-scenes {
+  position: relative;
+  isolation: isolate;
   background-color: transparent;
   padding: clamp(64px, 8vw, 96px) 0;
   box-sizing: border-box;
+}
+
+.capn-branded-scenes::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: auto;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  background-image: url('images/capn-crunch/CapnCrunch_scenes_bkg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .capn-branded-scenes__intro {
@@ -2427,11 +2518,14 @@ html:has(body.page-dark) {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 100%;
+  max-width: calc(1000 * 100vw / 1920);
+  margin-inline: auto;
   margin-bottom: clamp(32px, 4vw, 48px);
 }
 
 .capn-branded-scenes__title {
-  width: 350px;
+  width: calc(500 * 100vw / 1920);
   max-width: 100%;
   height: auto;
   display: block;
@@ -2439,18 +2533,22 @@ html:has(body.page-dark) {
 }
 
 .capn-branded-scenes__text {
+  width: 100%;
+  color: #FFF;
+  text-align: center;
   font-family: 'Open Sans', sans-serif;
-  font-size: clamp(13px, 1.15vw, 16px);
+  font-size: calc(26 * 100vw / 1920);
+  font-style: normal;
   font-weight: 600;
-  line-height: 1.5;
-  color: #184C84;
-  width: max-content;
+  line-height: 140%;
+  letter-spacing: calc(0.26 * 100vw / 1920);
+  text-transform: capitalize;
   max-width: 100%;
-  margin: 0;
+  margin: 0 0 calc(36.4 * 100vw / 1920);
 }
 
-.capn-branded-scenes__text + .capn-branded-scenes__text {
-  margin-top: 1rem;
+.capn-branded-scenes__text:last-child {
+  margin-bottom: 0;
 }
 
 .capn-branded-scenes__stack {
@@ -2470,6 +2568,10 @@ html:has(body.page-dark) {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.capn-branded-scenes video.capn-branded-scenes__image {
+  border-radius: 0;
 }
 
 .capn-branded-scenes__play {
@@ -2529,10 +2631,6 @@ html:has(body.page-dark) {
 
   .capn-alerts__icon--money {
     order: 3;
-  }
-
-  .capn-branded-scenes__text {
-    width: auto;
   }
 
   .capn-branded-scenes__play img {
