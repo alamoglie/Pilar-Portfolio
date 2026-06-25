@@ -559,6 +559,7 @@ button.nav__link {
   .hitman-talk.layout--wide,
   .astro-talk.layout--wide,
   .layout--narrow,
+  .project-container .other-projects.layout--wide,
   img.layout--wide,
   img.layout--narrow {
     max-width: var(--layout-viewport-cap);
@@ -1547,12 +1548,14 @@ button.nav__link {
    ========================================================== */
 html:has(body.page-hello-fresh),
 html:has(body.page-capn-crunch),
+html:has(body.page-fortnite),
 html:has(body.page-fanta) {
   background-color: var(--color-bg-white);
 }
 
 .page-hello-fresh,
 .page-capn-crunch,
+.page-fortnite,
 .page-fanta {
   width: 100%;
   max-width: none;
@@ -1562,6 +1565,7 @@ html:has(body.page-fanta) {
 
 .page-hello-fresh .nav-wrapper,
 .page-capn-crunch .nav-wrapper,
+.page-fortnite .nav-wrapper,
 .page-fanta .nav-wrapper {
   background: var(--color-bg-white);
 }
@@ -1590,7 +1594,8 @@ html:has(body.page-fanta) {
 
 .page-hello-fresh .project-intro--hellofresh::before,
 .page-fanta .project-intro--hellofresh::before,
-.page-capn-crunch .project-intro--hellofresh::before {
+.page-capn-crunch .project-intro--hellofresh::before,
+.page-fortnite .project-intro--hellofresh::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1606,7 +1611,8 @@ html:has(body.page-fanta) {
 
 .page-hello-fresh .project-intro--hellofresh,
 .page-fanta .project-intro--hellofresh,
-.page-capn-crunch .project-intro--hellofresh {
+.page-capn-crunch .project-intro--hellofresh,
+.page-fortnite .project-intro--hellofresh {
   position: relative;
   isolation: isolate;
   background-color: transparent;
@@ -1617,13 +1623,15 @@ html:has(body.page-fanta) {
   container-type: inline-size;
 }
 
-.page-capn-crunch .project-intro--hellofresh {
+.page-capn-crunch .project-intro--hellofresh,
+.page-fortnite .project-intro--hellofresh {
   z-index: 2;
 }
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__grid,
 .page-fanta .project-intro--hellofresh .project-intro__grid,
-.page-capn-crunch .project-intro--hellofresh .project-intro__grid {
+.page-capn-crunch .project-intro--hellofresh .project-intro__grid,
+.page-fortnite .project-intro--hellofresh .project-intro__grid {
   width: 83.333333333%;
   max-width: 1600px;
   margin-inline: auto;
@@ -1647,13 +1655,19 @@ html:has(body.page-fanta) {
 .page-capn-crunch .project-intro--hellofresh .project-intro__meta,
 .page-capn-crunch .project-intro--hellofresh .project-intro__meta-item,
 .page-capn-crunch .project-intro--hellofresh .project-intro__desc,
-.page-capn-crunch .project-intro--hellofresh .project-intro__subheadline {
+.page-capn-crunch .project-intro--hellofresh .project-intro__subheadline,
+.page-fortnite .project-intro--hellofresh .project-intro__title,
+.page-fortnite .project-intro--hellofresh .project-intro__meta,
+.page-fortnite .project-intro--hellofresh .project-intro__meta-item,
+.page-fortnite .project-intro--hellofresh .project-intro__desc,
+.page-fortnite .project-intro--hellofresh .project-intro__subheadline {
   font-family: var(--font-tiktok);
 }
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__title,
 .page-fanta .project-intro--hellofresh .project-intro__title,
-.page-capn-crunch .project-intro--hellofresh .project-intro__title {
+.page-capn-crunch .project-intro--hellofresh .project-intro__title,
+.page-fortnite .project-intro--hellofresh .project-intro__title {
   color: #000;
   font-size: 2.604166667cqw;
   font-weight: 450;
@@ -1667,7 +1681,9 @@ html:has(body.page-fanta) {
 .page-fanta .project-intro--hellofresh .project-intro__meta,
 .page-fanta .project-intro--hellofresh .project-intro__meta-item,
 .page-capn-crunch .project-intro--hellofresh .project-intro__meta,
-.page-capn-crunch .project-intro--hellofresh .project-intro__meta-item {
+.page-capn-crunch .project-intro--hellofresh .project-intro__meta-item,
+.page-fortnite .project-intro--hellofresh .project-intro__meta,
+.page-fortnite .project-intro--hellofresh .project-intro__meta-item {
   font-size: 1.145833333cqw;
   font-weight: 350;
   line-height: 1.4;
@@ -1676,13 +1692,15 @@ html:has(body.page-fanta) {
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__meta,
 .page-fanta .project-intro--hellofresh .project-intro__meta,
-.page-capn-crunch .project-intro--hellofresh .project-intro__meta {
+.page-capn-crunch .project-intro--hellofresh .project-intro__meta,
+.page-fortnite .project-intro--hellofresh .project-intro__meta {
   gap: 0;
 }
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__subheadline,
 .page-fanta .project-intro--hellofresh .project-intro__subheadline,
-.page-capn-crunch .project-intro--hellofresh .project-intro__subheadline {
+.page-capn-crunch .project-intro--hellofresh .project-intro__subheadline,
+.page-fortnite .project-intro--hellofresh .project-intro__subheadline {
   text-transform: none;
   letter-spacing: normal;
   color: #1E1E1E;
@@ -1696,7 +1714,8 @@ html:has(body.page-fanta) {
 
 .page-hello-fresh .project-intro--hellofresh .project-intro__desc,
 .page-fanta .project-intro--hellofresh .project-intro__desc,
-.page-capn-crunch .project-intro--hellofresh .project-intro__desc {
+.page-capn-crunch .project-intro--hellofresh .project-intro__desc,
+.page-fortnite .project-intro--hellofresh .project-intro__desc {
   color: #1E1E1E;
   font-size: 1.302083333cqw;
   font-weight: 450;
@@ -1957,13 +1976,16 @@ html:has(body.page-fanta) {
 /* ==========================================================
    OTHER PROJECTS — project detail pages
    ========================================================== */
-.project-container .other-projects {
+.project-container .other-projects.layout--wide {
   width: 100%;
   max-width: var(--site-max-width);
   margin-inline: auto;
+  box-sizing: border-box;
+}
+
+.project-container .other-projects {
   background-color: var(--color-bg-white);
   padding: 0;
-  box-sizing: border-box;
 }
 
 .project-container .other-projects__label {
@@ -2280,6 +2302,76 @@ html:has(body.page-dark) {
   margin-bottom: 0;
 }
 
+.page-fortnite .capn-takeover__text {
+  color: #000000;
+}
+
+.page-fortnite .capn-takeover + .capn-takeover .capn-takeover__text {
+  color: #fff;
+}
+
+.page-fortnite .capn-takeover__logo {
+  width: calc(532 * 100vw / 1920);
+  max-width: 100%;
+  height: auto;
+}
+
+.page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__header:last-of-type .capn-takeover__logo {
+  width: calc(234 * 100vw / 1920);
+  height: calc(53 * 100vw / 1920);
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.page-fortnite .capn-takeover + .capn-takeover .capn-takeover__header:last-of-type .capn-takeover__logo {
+  width: calc(340 * 100vw / 1920);
+  max-width: 100%;
+  height: auto;
+}
+
+.page-fortnite .capn-takeover__image {
+  width: calc(674 * 100vw / 1920);
+  max-width: 100%;
+  height: auto;
+}
+
+.page-fortnite .capn-takeover + .capn-takeover .capn-takeover__image {
+  width: calc(589 * 100vw / 1920);
+  max-width: 100%;
+  height: auto;
+}
+
+.page-fortnite .capn-takeover__stack {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.page-fortnite .project-intro--hellofresh + .capn-takeover .capn-takeover__stack {
+  margin-top: 2rem;
+}
+
+.page-fortnite .capn-takeover + .capn-takeover .capn-takeover__stack {
+  margin-top: 2rem;
+}
+
+.page-fortnite .capn-takeover__header {
+  margin-top: 1rem;
+  padding-top: 0;
+}
+
+.page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header {
+  margin-top: 2rem;
+}
+
+.page-fortnite .project-intro--hellofresh + .capn-takeover .capn-scenes__stack + .capn-takeover__header .capn-takeover__copy {
+  margin-bottom: 2rem;
+}
+
+.page-fortnite .capn-takeover + .capn-takeover .capn-scenes__stack + .capn-takeover__header {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .capn-takeover__stack,
 .capn-takeover .capn-scenes__stack {
   display: flex;
@@ -2292,6 +2384,7 @@ html:has(body.page-dark) {
 
 .capn-takeover__stack {
   gap: 0;
+  align-items: center;
 }
 
 .capn-takeover .capn-scenes__stack {
@@ -2417,6 +2510,7 @@ html:has(body.page-dark) {
 .capn-alerts__icon--star {
   width: calc(130 * 100vw / 1920);
   max-width: 100%;
+  transform: translateY(-3rem);
 }
 
 .capn-alerts__icon--money {
@@ -2439,6 +2533,16 @@ html:has(body.page-dark) {
 
 .capn-alerts-media video.capn-alerts-media__image {
   border-radius: 0;
+}
+
+.page-fortnite .capn-takeover__alert-video {
+  width: calc(min(100%, var(--layout-narrow-max), 80%) * 0.65);
+  max-width: calc(min(100%, var(--layout-narrow-max), 80%) * 0.65);
+  height: auto;
+  display: block;
+  margin-top: 2rem;
+  margin-inline: auto;
+  line-height: 0;
 }
 
 .capn-branded-scenes {
