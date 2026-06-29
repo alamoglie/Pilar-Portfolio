@@ -820,7 +820,7 @@ button.nav__link {
   width: 100%;
   max-width: none;
   white-space: nowrap;
-  margin: 0 0 calc(36.4 * 100vw / 1920);
+  margin: 0 0 calc(20 * 100vw / 1920);
 }
 
 .astro-branded__desc:last-child {
@@ -934,7 +934,7 @@ button.nav__link {
   width: 100%;
   max-width: none;
   white-space: nowrap;
-  margin: 0 0 calc(36.4 * 100vw / 1920);
+  margin: 0 0 calc(20 * 100vw / 1920);
 }
 
 .astro-alerts__desc:last-child {
@@ -1036,7 +1036,7 @@ button.nav__link {
   width: 100%;
   max-width: none;
   white-space: nowrap;
-  margin: 0 0 calc(36.4 * 100vw / 1920);
+  margin: 0 0 calc(20 * 100vw / 1920);
   text-align: center;
 }
 
@@ -1352,8 +1352,11 @@ button.nav__link {
 
 .scenes-stack__image {
   width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
+  box-sizing: border-box;
+  border: 1px solid #DABB7C;
 }
 
 /* -- Scenes: 3 cards in a horizontal row (other themes) -- */
@@ -2190,7 +2193,7 @@ html:has(body.page-dark) {
   background-color: transparent;
   font-family: var(--font-tiktok);
   padding-top: calc(50 * 100vw / 1920);
-  padding-bottom: clamp(64px, 8vw, 100px);
+  padding-bottom: calc(213 * 100vw / 1920);
   padding-inline: 0;
   container-type: inline-size;
   z-index: 2;
@@ -2204,6 +2207,11 @@ html:has(body.page-dark) {
   box-sizing: border-box;
   grid-template-columns: minmax(0, 722fr) minmax(0, 702fr);
   column-gap: 6.638977467%;
+}
+
+.page-dark .project-intro--hellofresh .project-intro__desc-block {
+  margin-left: calc(200 * 100vw / 1920);
+  gap: calc(20 * 100vw / 1920);
 }
 
 .page-dark .project-intro--hellofresh .project-intro__title,
@@ -2285,7 +2293,7 @@ html:has(body.page-dark) {
   letter-spacing: calc(0.26 * 100vw / 1920);
   text-transform: none;
   max-width: none;
-  margin: 0 0 calc(36.4 * 100vw / 1920);
+  margin: 0 0 calc(20 * 100vw / 1920);
   opacity: 1;
   white-space: nowrap;
   text-wrap: normal;
