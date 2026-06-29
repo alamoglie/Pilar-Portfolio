@@ -733,8 +733,8 @@ button.nav__link {
 }
 
 .theme-section--dark .theme-headline-wrapper .project-hero__image {
-  width: 100%;
-  height: 450px;
+  aspect-ratio: 1920 / 450;
+  height: auto;
   object-fit: cover;
   object-position: center;
 }
