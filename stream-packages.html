@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=TikTok+Sans:wdth,wght@75..125,300..900&family=Work+Sans:wght@400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=TikTok+Sans:wdth,wght@75..125,300..900&family=Work+Sans:wght@400&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -38,17 +38,19 @@
 
     <!-- ── SECTION 1: HERO + INTRO ── -->
     <section class="project-hero layout--wide" aria-label="Stream Packages & Alerts preview">
-      <img src="images/stream-packages/bond_end.png" alt="007 First Light — Stream Ended overlay"
-        class="project-hero__image" />
+      <video class="project-hero__image" autoplay muted loop playsinline preload="auto"
+        aria-label="Stream Packages & Alerts — Supertheme headline preview">
+        <source src="images/stream-packages/videos/Supertheme_headline.webm" type="video/webm" />
+      </video>
     </section>
 
-    <section class="project-intro">
+    <section class="project-intro project-intro--hellofresh">
       <div class="project-intro__grid">
         <div class="project-intro__sidebar">
           <h1 class="project-intro__title">Stream Packages & Alerts</h1>
           <div class="project-intro__meta">
-            <p class="project-intro__meta-item"><strong>Role:</strong> art direction / design</p>
-            <p class="project-intro__meta-item"><strong>Client:</strong> StreamElements</p>
+            <p class="project-intro__meta-item">art direction / design</p>
+            <p class="project-intro__meta-item">Client: StreamElements</p>
           </div>
         </div>
 
@@ -64,41 +66,58 @@
     <section class="theme-section theme-section--dark" aria-label="007 First Light theme">
 
       <div class="project-hero theme-headline-wrapper layout--bleed">
-        <img src="images/stream-packages/bond_headline.png" alt="007 First Light — Earn the Number"
+        <img src="images/stream-packages/IMG/JamesBond_headline.jpg" alt="007 First Light — Earn the Number"
           class="project-hero__image" />
       </div>
 
       <div class="theme-content-block">
         <img src="images/stream-packages/Branded Scenes.png" alt="Branded Scenes"
           class="theme-content-block__label-img" />
-        <p class="theme-content-block__desc">A collection of animated broadcast graphics used as waiting and transition screens throughout the live stream experience. The package includes three scenes: Starting Soon, Be Right Back, Stream Ended.</p>
+        <p class="theme-content-block__desc">A collection of animated broadcast graphics used as waiting<br>
+          and transition screens throughout the live stream experience.</p>
+        <p class="theme-content-block__desc">The package includes three scenes:<br>
+          Starting Soon, Be Right Back, Stream Ended.</p>
       </div>
 
       <div class="scenes-stack layout--narrow">
-        <img src="images/stream-packages/bond_soon.png" alt="James Bond — Starting Soon" class="scenes-stack__image" />
-        <img src="images/stream-packages/bond_brb.png" alt="James Bond — Be Right Back" class="scenes-stack__image" />
-        <img src="images/stream-packages/bond_end.png" alt="James Bond — Stream Ended" class="scenes-stack__image" />
+        <video class="scenes-stack__image" autoplay muted loop playsinline preload="auto"
+          aria-label="James Bond — Starting Soon">
+          <source src="images/stream-packages/videos/JamesBond_SS.webm" type="video/webm" />
+        </video>
+        <video class="scenes-stack__image" autoplay muted loop playsinline preload="auto"
+          aria-label="James Bond — Be Right Back">
+          <source src="images/stream-packages/videos/JamesBond_BRB.webm" type="video/webm" />
+        </video>
+        <video class="scenes-stack__image" autoplay muted loop playsinline preload="auto"
+          aria-label="James Bond — Stream Ended">
+          <source src="images/stream-packages/videos/JamesBond_SE.webm" type="video/webm" />
+        </video>
       </div>
 
       <!-- Section 3: overlay preview -->
       <div class="scene-fullwidth layout--wide">
-        <img src="images/stream-packages/bond_talk.png" alt="James Bond — Talk / Overlay Scene" />
+        <video autoplay muted loop playsinline preload="auto"
+          aria-label="James Bond — Talk / Overlay Scene">
+          <source src="images/stream-packages/videos/JamesBond_Talkscene.webm" type="video/webm" />
+        </video>
       </div>
 
       <!-- Section 4: Alerts -->
       <div class="bond-alerts">
         <header class="bond-alerts__header">
           <img src="images/stream-packages/James Bond_Alerts_txt.png" alt="Alerts" class="bond-alerts__title" />
-          <p class="bond-alerts__desc">Animated on-stream graphics that provide real-time visual feedback when key stream events occur.</p>
-          <p class="bond-alerts__desc">Alerts are dynamically populated with live data, displaying viewer names and event information such as follows, subscriptions, donations, and other community interactions.</p>
+          <p class="bond-alerts__desc">Animated on-stream graphics that provide<br>
+            real-time visual feedback when key stream events occur.</p>
+          <p class="bond-alerts__desc">Alerts are dynamically populated with live data, displaying viewer names<br>
+            and event information such as follows, subscriptions, donations,<br>
+            and other community interactions.</p>
         </header>
 
         <div class="bond-alerts__grid-wrap layout--narrow">
-          <img src="images/stream-packages/James Bond_Alerts 1.png" alt="James Bond theme alert previews"
-            class="bond-alerts__grid-image" />
-          <button type="button" class="bond-alerts__play" aria-label="Play alerts preview">
-            <img src="images/stream-packages/Play-btn.svg" alt="" />
-          </button>
+          <video class="bond-alerts__grid-image" autoplay muted loop playsinline preload="auto"
+            aria-label="James Bond theme alert previews">
+            <source src="images/stream-packages/videos/JamesBond_Alerts.webm" type="video/webm" />
+          </video>
         </div>
       </div>
 
@@ -107,35 +126,38 @@
     <!-- ── THEME 2: ASTROLOGY — BRANDED SCENES ── -->
     <section class="theme-section theme-section--astro layout--full" aria-label="Astrology theme">
 
+      <div class="project-hero theme-headline-wrapper layout--bleed">
+        <img src="images/stream-packages/IMG/Astrology_headline.jpg" alt="Astrology — Animated Overlays"
+          class="project-hero__image" />
+      </div>
+
       <div class="astro-branded layout--full">
-        <header class="astro-branded__header layout--full">
-          <img src="images/stream-packages/Astrology_txt.png" alt="Astrology — Animated Overlays"
-            class="astro-branded__title" />
+        <div class="astro-branded__copy">
           <h2 class="astro-branded__label">Branded Scenes</h2>
-          <p class="astro-branded__desc">A collection of animated broadcast graphics used as waiting and transition screens throughout the live stream experience. The package includes three scenes: Starting Soon, Be Right Back, Stream Ended.</p>
-        </header>
+          <p class="astro-branded__desc">A collection of animated broadcast graphics used as waiting<br>
+            and transition screens throughout the live stream experience.</p>
+          <p class="astro-branded__desc">The package includes three scenes:<br>
+            Starting Soon, Be Right Back, Stream Ended.</p>
+        </div>
 
         <div class="astro-scenes-stack layout--narrow">
           <div class="astro-scene">
-            <img src="images/stream-packages/astro_soon.png" alt="Astrology — Starting Soon"
-              class="astro-scene__image" />
-            <button type="button" class="astro-scene__play" aria-label="Play Starting Soon preview">
-              <img src="images/stream-packages/Play-btn.svg" alt="" />
-            </button>
+            <video class="astro-scene__image" autoplay muted loop playsinline preload="auto"
+              aria-label="Astrology — Starting Soon">
+              <source src="images/stream-packages/videos/Astrology_SS.webm" type="video/webm" />
+            </video>
           </div>
           <div class="astro-scene">
-            <img src="images/stream-packages/astro_brb.png" alt="Astrology — Be Right Back"
-              class="astro-scene__image" />
-            <button type="button" class="astro-scene__play" aria-label="Play Be Right Back preview">
-              <img src="images/stream-packages/Play-btn.svg" alt="" />
-            </button>
+            <video class="astro-scene__image" autoplay muted loop playsinline preload="auto"
+              aria-label="Astrology — Be Right Back">
+              <source src="images/stream-packages/videos/Astrology_BRB.webm" type="video/webm" />
+            </video>
           </div>
           <div class="astro-scene">
-            <img src="images/stream-packages/astro_end.png" alt="Astrology — Stream Ended"
-              class="astro-scene__image" />
-            <button type="button" class="astro-scene__play" aria-label="Play Stream Ended preview">
-              <img src="images/stream-packages/Play-btn.svg" alt="" />
-            </button>
+            <video class="astro-scene__image" autoplay muted loop playsinline preload="auto"
+              aria-label="Astrology — Stream Ended">
+              <source src="images/stream-packages/videos/Astrology_SE.webm" type="video/webm" />
+            </video>
           </div>
         </div>
       </div>
@@ -143,11 +165,10 @@
       <!-- Overlay preview -->
       <div class="astro-talk layout--wide">
         <div class="astro-scene astro-scene--talk">
-          <img src="images/stream-packages/astro_talk.png" alt="Astrology — Talk / Overlay Scene"
-            class="astro-scene__image layout--wide" />
-          <button type="button" class="astro-scene__play astro-scene__play--talk" aria-label="Play overlay preview">
-            <img src="images/stream-packages/Play-btn.svg" alt="" />
-          </button>
+          <video class="astro-scene__image layout--wide" autoplay muted loop playsinline preload="auto"
+            aria-label="Astrology — Talk / Overlay Scene">
+            <source src="images/stream-packages/videos/Astrology_talkscene.webm" type="video/webm" />
+          </video>
         </div>
       </div>
 
@@ -155,15 +176,18 @@
       <div class="astro-alerts">
         <header class="astro-alerts__header">
           <h2 class="astro-alerts__title">Alerts</h2>
-          <p class="astro-alerts__desc">Animated on-stream graphics that provide real-time visual feedback when key stream events occur. Alerts are dynamically populated with live data, displaying viewer names and event information such as follows, subscriptions, donations, and other community interactions.</p>
+          <p class="astro-alerts__desc">Animated on-stream graphics that provide<br>
+            real-time visual feedback when key stream events occur.</p>
+          <p class="astro-alerts__desc">Alerts are dynamically populated with live data, displaying viewer names<br>
+            and event information such as follows, subscriptions, donations,<br>
+            and other community interactions.</p>
         </header>
 
         <div class="astro-alerts__grid-wrap layout--narrow">
-          <img src="images/stream-packages/cards.png" alt="Astrology theme alert previews"
-            class="astro-alerts__grid-image" />
-          <button type="button" class="astro-alerts__play" aria-label="Play alerts preview">
-            <img src="images/stream-packages/Play-btn.svg" alt="" />
-          </button>
+          <video class="astro-alerts__grid-image" autoplay muted loop playsinline preload="auto"
+            aria-label="Astrology theme alert previews">
+            <source src="images/stream-packages/videos/Astrology_alerts.webm" type="video/webm" />
+          </video>
         </div>
       </div>
 
@@ -173,7 +197,7 @@
     <section class="theme-section theme-section--hitman" aria-label="Hitman theme">
 
       <div class="project-hero theme-headline-wrapper layout--bleed">
-        <img src="images/stream-packages/hitman_headline.png" alt="Hitman — World of Assassination"
+        <img src="images/stream-packages/IMG/Hitman_headline.jpg" alt="Hitman — World of Assassination"
           class="project-hero__image" />
       </div>
 
@@ -181,56 +205,58 @@
         <header class="hitman-branded__header">
           <img src="images/stream-packages/Hitman_Branded Scenes_txt 1.png" alt="Branded Scenes"
             class="hitman-branded__label-img" />
-          <p class="hitman-branded__desc">A collection of animated broadcast graphics used as waiting and transition screens throughout the live stream experience. The package includes three scenes: Starting Soon, Be Right Back, Stream Ended.</p>
+          <p class="hitman-branded__desc">A collection of animated broadcast graphics used as waiting<br>
+            and transition screens throughout the live stream experience.</p>
+          <p class="hitman-branded__desc">The package includes three scenes:<br>
+            Starting Soon, Be Right Back, Stream Ended.</p>
         </header>
 
         <div class="hitman-scenes-stack">
           <div class="hitman-scene">
-            <img src="images/stream-packages/hitman_soon.png" alt="Hitman — Starting Soon"
-              class="hitman-scene__image" />
-            <button type="button" class="hitman-scene__play" aria-label="Play Starting Soon preview">
-              <img src="images/stream-packages/Play-btn.svg" alt="" />
-            </button>
+            <video class="hitman-scene__image" autoplay muted loop playsinline preload="auto"
+              aria-label="Hitman — Starting Soon">
+              <source src="images/stream-packages/videos/Hitman_SS.webm" type="video/webm" />
+            </video>
           </div>
           <div class="hitman-scene">
-            <img src="images/stream-packages/hitman_brb.png" alt="Hitman — Be Right Back"
-              class="hitman-scene__image" />
-            <button type="button" class="hitman-scene__play" aria-label="Play Be Right Back preview">
-              <img src="images/stream-packages/Play-btn.svg" alt="" />
-            </button>
+            <video class="hitman-scene__image" autoplay muted loop playsinline preload="auto"
+              aria-label="Hitman — Be Right Back">
+              <source src="images/stream-packages/videos/Hitman_BRB.webm" type="video/webm" />
+            </video>
           </div>
           <div class="hitman-scene">
-            <img src="images/stream-packages/hitman_end.png" alt="Hitman — Stream Ended"
-              class="hitman-scene__image" />
-            <button type="button" class="hitman-scene__play" aria-label="Play Stream Ended preview">
-              <img src="images/stream-packages/Play-btn.svg" alt="" />
-            </button>
+            <video class="hitman-scene__image" autoplay muted loop playsinline preload="auto"
+              aria-label="Hitman — Stream Ended">
+              <source src="images/stream-packages/videos/Hitman_SE.webm" type="video/webm" />
+            </video>
           </div>
         </div>
       </div>
 
       <div class="hitman-talk layout--wide">
         <div class="hitman-scene hitman-scene--talk">
-          <img src="images/stream-packages/hitman_talk.png" alt="Hitman — Talk / Overlay Scene"
-            class="hitman-scene__image" />
-          <button type="button" class="hitman-scene__play hitman-scene__play--talk" aria-label="Play overlay preview">
-            <img src="images/stream-packages/Play-btn.svg" alt="" />
-          </button>
+          <video class="hitman-scene__image layout--wide" autoplay muted loop playsinline preload="auto"
+            aria-label="Hitman — Talk / Overlay Scene">
+            <source src="images/stream-packages/videos/Hitman_talk.webm" type="video/webm" />
+          </video>
         </div>
       </div>
 
       <div class="hitman-alerts">
         <header class="hitman-alerts__header">
           <img src="images/stream-packages/Hitman_Alerts_txt 1.png" alt="Alerts" class="hitman-alerts__title" />
-          <p class="hitman-alerts__desc">Animated on-stream graphics that provide real-time visual feedback when key stream events occur. Alerts are dynamically populated with live data, displaying viewer names and event information such as follows, subscriptions, donations, and other community interactions.</p>
+          <p class="hitman-alerts__desc">Animated on-stream graphics that provide<br>
+            real-time visual feedback when key stream events occur.</p>
+          <p class="hitman-alerts__desc">Alerts are dynamically populated with live data, displaying viewer names<br>
+            and event information such as follows, subscriptions, donations,<br>
+            and other community interactions.</p>
         </header>
 
         <div class="hitman-alerts__grid-wrap layout--narrow">
-          <img src="images/stream-packages/Hitman_Alerts 1.png" alt="Hitman theme alert previews"
-            class="hitman-alerts__grid-image" />
-          <button type="button" class="hitman-alerts__play" aria-label="Play alerts preview">
-            <img src="images/stream-packages/Play-btn.svg" alt="" />
-          </button>
+          <video class="hitman-alerts__grid-image" autoplay muted loop playsinline preload="auto"
+            aria-label="Hitman theme alert previews">
+            <source src="images/stream-packages/videos/Hitman_alerts.webm" type="video/webm" />
+          </video>
         </div>
       </div>
 
@@ -239,21 +265,24 @@
     <!-- ── THEME 4: HOLIDAY ALERT PACK ── -->
     <section class="theme-section theme-section--holiday" aria-label="Holiday Alert Pack">
 
-      <img src="images/stream-packages/holiday-bg.png" alt="" class="holiday-section-bg" aria-hidden="true" />
+      <img src="images/stream-packages/IMG/Holiday_headline.jpg" alt="" class="holiday-section-bg" aria-hidden="true" />
 
       <div class="holiday-pack">
         <header class="holiday-pack__header">
-          <img src="images/stream-packages/Holiday_txt 1.png" alt="Holiday Alert Pack"
+          <img src="images/stream-packages/IMG/Holiday_txt.png" alt="Holiday Alert Pack"
             class="holiday-pack__title" />
-          <p class="holiday-pack__desc">Animated on-stream graphics that provide real-time visual feedback when key stream events occur. Alerts are dynamically populated with live data, displaying viewer names and event information such as follows, subscriptions, donations, and other community interactions.</p>
+          <p class="holiday-pack__desc">Animated on-stream graphics that provide<br>
+            real-time visual feedback when key stream events occur.</p>
+          <p class="holiday-pack__desc">Alerts are dynamically populated with live data, displaying viewer names<br>
+            and event information such as follows, subscriptions, donations,<br>
+            and other community interactions.</p>
         </header>
 
         <div class="holiday-pack__grid-wrap layout--narrow">
-          <img src="images/stream-packages/Holiday_Alerts 1.png" alt="Holiday theme alert previews"
-            class="holiday-pack__grid-image" />
-          <button type="button" class="holiday-pack__play" aria-label="Play alerts preview">
-            <img src="images/stream-packages/Play-btn.svg" alt="" />
-          </button>
+          <video class="holiday-pack__grid-image" autoplay muted loop playsinline preload="auto"
+            aria-label="Holiday theme alert previews">
+            <source src="images/stream-packages/videos/Holiday_alerts.webm" type="video/webm" />
+          </video>
         </div>
       </div>
 

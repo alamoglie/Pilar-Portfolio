@@ -558,10 +558,12 @@ button.nav__link {
   .layout--wide,
   .hitman-talk.layout--wide,
   .astro-talk.layout--wide,
+  .scene-fullwidth.layout--wide,
   .layout--narrow,
   .project-container .other-projects.layout--wide,
   img.layout--wide,
-  img.layout--narrow {
+  img.layout--narrow,
+  video.layout--wide {
     max-width: var(--layout-viewport-cap);
   }
 
@@ -698,6 +700,7 @@ button.nav__link {
 
 .theme-section--dark {
   padding-top: 0;
+  padding-bottom: calc(170 * 100vw / 1920);
   color: #ffffff;
 }
 
@@ -712,16 +715,24 @@ button.nav__link {
 
 .theme-section--dark .theme-content-block__label-img {
   display: block;
-  width: 525px;
+  width: calc(526 * 100vw / 1920);
   max-width: 100%;
   height: auto;
   margin-inline: auto;
   margin-bottom: 20px;
 }
 
+.theme-section--dark .theme-headline-wrapper {
+  margin-bottom: calc(89 * 100vw / 1920);
+}
+
 .theme-section--dark .theme-content-block {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-top: 0;
+  margin-bottom: calc(89 * 100vw / 1920);
+}
+
+.theme-section--dark .scenes-stack {
+  margin-bottom: calc(112 * 100vw / 1920);
 }
 
 .theme-section--dark .theme-content-block__desc {
@@ -731,7 +742,9 @@ button.nav__link {
   line-height: 1.3;
   color: #FFF0D7;
   opacity: 1;
-  max-width: 560px;
+  width: 100%;
+  max-width: none;
+  white-space: nowrap;
 }
 
 .theme-section--astro::before {
@@ -751,7 +764,12 @@ button.nav__link {
 }
 
 .theme-section--astro {
+  padding: 0;
   color: #ffffff;
+}
+
+.theme-section--astro .theme-headline-wrapper {
+  margin-bottom: calc(68 * 100vw / 1920);
 }
 
 /* -- Astrology branded scenes -- */
@@ -761,72 +779,53 @@ button.nav__link {
   margin-inline: 0;
 }
 
-.astro-branded__header {
-  position: relative;
-  isolation: isolate;
+.astro-branded__copy {
   text-align: center;
-  margin-bottom: 48px;
-  padding-inline: var(--content-margin);
-  padding-block: 48px 56px;
-  background: transparent;
-}
-
-.astro-branded__header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
-  z-index: -1;
-  pointer-events: none;
-  background-color: #0a1520;
-  background-image: url('images/stream-packages/Astrology_bkg3.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.astro-branded__header.layout--full {
   width: 100%;
-  max-width: none;
-  margin-inline: 0;
-}
-
-.astro-branded__title {
-  display: block;
-  width: 750px;
-  max-width: 100%;
-  height: auto;
-  margin-inline: auto;
-  margin-bottom: 36px;
+  box-sizing: border-box;
+  padding-inline: var(--content-margin);
+  margin-bottom: calc(68 * 100vw / 1920);
 }
 
 .astro-branded__label {
+  color: #FFF0D7;
+  text-align: center;
+  -webkit-text-stroke-width: calc(0.77 * 100vw / 1920);
+  -webkit-text-stroke-color: #000;
   font-family: 'Raleway', sans-serif;
-  font-size: clamp(18px, 2vw, 24px);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: calc(60 * 100vw / 1920);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: calc(-0.6 * 100vw / 1920);
+  text-transform: none;
   margin-bottom: 16px;
 }
 
 .astro-branded__desc {
+  color: #FFF0D7;
+  text-align: center;
   font-family: 'Raleway', sans-serif;
-  font-size: clamp(14px, 1.111vw, 16px);
+  font-size: calc(26 * 100vw / 1920);
+  font-style: normal;
   font-weight: 400;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.55);
-  max-width: 560px;
-  margin-inline: auto;
+  line-height: 120%;
+  text-transform: none;
+  width: 100%;
+  max-width: none;
+  white-space: nowrap;
+  margin: 0 0 calc(36.4 * 100vw / 1920);
+}
+
+.astro-branded__desc:last-child {
+  margin-bottom: 0;
 }
 
 .astro-scenes-stack {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-bottom: 80px;
+  gap: calc(25 * 100vw / 1920);
+  margin-bottom: calc(100 * 100vw / 1920);
 }
 
 .astro-scene {
@@ -886,42 +885,54 @@ button.nav__link {
 
 /* -- Astrology alerts -- */
 .astro-alerts {
-  margin-top: 80px;
-  padding-block: 72px 96px;
+  margin-top: calc(100 * 100vw / 1920);
+  margin-bottom: calc(136 * 100vw / 1920);
+  padding-bottom: 0;
   padding-inline: 0;
   width: 100%;
   background-color: #000000;
 }
 
 .astro-alerts__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
-  margin-bottom: 48px;
+  width: 100%;
+  box-sizing: border-box;
   padding-inline: var(--content-margin);
+  margin-bottom: calc(68 * 100vw / 1920);
 }
 
 .astro-alerts__title {
-  font-family: 'Raleway', sans-serif;
-  font-size: clamp(36px, 4.5vw, 52px);
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  line-height: 1.1;
   color: #FFF0D7;
-  margin-bottom: 20px;
+  text-align: center;
+  -webkit-text-stroke-width: calc(0.77 * 100vw / 1920);
+  -webkit-text-stroke-color: #000;
+  font-family: 'Raleway', sans-serif;
+  font-size: calc(60 * 100vw / 1920);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: calc(-0.6 * 100vw / 1920);
+  text-transform: none;
+  margin-bottom: 16px;
 }
 
 .astro-alerts__desc {
-  font-family: 'Raleway', sans-serif;
-  font-size: clamp(15px, 1.25vw, 18px);
-  font-weight: 400;
-  line-height: 1.55;
   color: #FFF0D7;
-  max-width: 680px;
-  margin-inline: auto;
   text-align: center;
-  text-wrap: balance;
+  font-family: 'Raleway', sans-serif;
+  font-size: calc(26 * 100vw / 1920);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-transform: none;
+  width: 100%;
+  max-width: none;
+  white-space: nowrap;
+  margin: 0 0 calc(36.4 * 100vw / 1920);
+}
+
+.astro-alerts__desc:last-child {
+  margin-bottom: 0;
 }
 
 .astro-alerts__grid-wrap {
@@ -963,7 +974,19 @@ button.nav__link {
 }
 
 .theme-section--hitman {
+  padding: 0 0 calc(80 * 100vw / 1920);
+  margin-top: 0;
   color: #ffffff;
+}
+
+.theme-section--hitman .theme-headline-wrapper,
+.theme-section--hitman .project-hero {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.theme-section--hitman .theme-headline-wrapper {
+  margin-bottom: calc(117 * 100vw / 1920);
 }
 
 /* -- Hitman branded scenes -- */
@@ -973,7 +996,9 @@ button.nav__link {
 
 .hitman-branded__header {
   text-align: center;
-  margin-bottom: 48px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: calc(86 * 100vw / 1920);
 }
 
 .hitman-branded__label-img {
@@ -989,10 +1014,16 @@ button.nav__link {
   font-size: clamp(14px, 1.111vw, 16px);
   font-weight: 400;
   line-height: 1.65;
-  color: #FFF0D7;
-  max-width: 560px;
-  margin-inline: auto;
+  color: #888888;
+  width: 100%;
+  max-width: none;
+  white-space: nowrap;
+  margin: 0 0 calc(36.4 * 100vw / 1920);
   text-align: center;
+}
+
+.hitman-branded__desc:last-child {
+  margin-bottom: 0;
 }
 
 .hitman-scenes-stack {
@@ -1001,7 +1032,7 @@ button.nav__link {
   gap: 6px;
   max-width: 1216px;
   margin-inline: auto;
-  margin-bottom: 80px;
+  margin-bottom: calc(80 * 100vw / 1920);
 }
 
 .hitman-scene {
@@ -1065,7 +1096,7 @@ button.nav__link {
 
 /* -- Hitman alerts -- */
 .hitman-alerts {
-  margin-top: 100px;
+  margin-top: calc(80 * 100vw / 1920);
   padding-inline: var(--content-margin);
   padding-bottom: 20px;
 }
@@ -1073,7 +1104,9 @@ button.nav__link {
 .hitman-alerts__header {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
   text-align: center;
   margin-bottom: 48px;
 }
@@ -1090,11 +1123,12 @@ button.nav__link {
   font-size: clamp(15px, 1.25vw, 18px);
   font-weight: 400;
   line-height: 1.55;
-  color: #FFF0D7;
-  max-width: 680px;
-  margin-inline: auto;
+  color: #888888;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
   text-align: center;
-  text-wrap: balance;
+  white-space: nowrap;
 }
 
 .hitman-alerts__grid-wrap {
@@ -1161,19 +1195,21 @@ button.nav__link {
 .holiday-pack__header {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: calc(60 * 100vw / 1920);
   padding-inline: var(--content-margin);
 }
 
 .holiday-pack__title {
   display: block;
-  width: 600px;
+  width: calc(473 * 100vw / 1920);
   max-width: 100%;
   height: auto;
   margin-inline: auto;
-  margin-bottom: 28px;
+  margin-bottom: calc(28 * 100vw / 1920);
 }
 
 .holiday-pack__desc {
@@ -1181,11 +1217,12 @@ button.nav__link {
   font-size: clamp(15px, 1.25vw, 18px);
   font-weight: 400;
   line-height: 1.55;
-  color: #ffffff;
-  max-width: 680px;
-  margin-inline: auto;
+  color: #EEFFF9;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
   text-align: center;
-  text-wrap: balance;
+  white-space: nowrap;
 }
 
 .holiday-pack__grid-wrap {
@@ -1258,6 +1295,8 @@ button.nav__link {
 /* -- Section label + description -- */
 .theme-content-block {
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
   margin-bottom: 48px;
   padding-inline: var(--content-margin);
 }
@@ -1277,8 +1316,10 @@ button.nav__link {
   font-size: clamp(14px, 1.111vw, 16px);
   font-weight: 400;
   line-height: 1.65;
-  max-width: 640px;
-  margin-inline: auto;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  white-space: nowrap;
   opacity: 0.7;
 }
 
@@ -1325,11 +1366,19 @@ button.nav__link {
   box-sizing: border-box;
 }
 
+.scene-fullwidth.layout--wide {
+  width: 100%;
+  max-width: var(--site-max-width);
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
 .scene-fullwidth.layout--bleed {
   padding-inline: 0;
 }
 
-.scene-fullwidth img {
+.scene-fullwidth img,
+.scene-fullwidth video {
   width: 100%;
   height: auto;
   display: block;
@@ -1338,18 +1387,21 @@ button.nav__link {
 
 /* -- Bond Alerts section -- */
 .bond-alerts {
-  margin-top: 100px;
+  margin-top: calc(100 * 100vw / 1920);
 }
 
 .bond-alerts__header {
   text-align: center;
-  margin-bottom: 48px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: calc(54 * 100vw / 1920);
   padding-inline: var(--content-margin);
 }
 
 .bond-alerts__title {
-  width: auto;
-  height: clamp(28px, 3.5vw, 48px);
+  width: calc(229 * 100vw / 1920);
+  max-width: 100%;
+  height: auto;
   margin-inline: auto;
   margin-bottom: 28px;
 }
@@ -1360,8 +1412,10 @@ button.nav__link {
   font-weight: 400;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.55);
-  max-width: 560px;
-  margin-inline: auto;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  white-space: nowrap;
 }
 
 .bond-alerts__desc + .bond-alerts__desc {
@@ -1523,6 +1577,12 @@ button.nav__link {
 @media (max-width: 1024px) {
   .project-hero-strip { grid-template-columns: repeat(2, 1fr); }
   .theme-section { padding: 72px 0 60px; }
+  .theme-section--dark,
+  .theme-section--astro,
+  .theme-section--hitman {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2089,6 +2149,160 @@ html:has(body.page-dark) {
 .page-dark .site-footer__link,
 .page-dark .site-footer__time {
   color: var(--color-muted-on-dark);
+}
+
+/* Stream Packages — intro (Fortnite layout, inverted dark theme) */
+.page-dark .project-intro--hellofresh::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: auto;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--color-bg-dark);
+}
+
+.page-dark .project-intro--hellofresh {
+  position: relative;
+  isolation: isolate;
+  background-color: transparent;
+  font-family: var(--font-tiktok);
+  padding-top: calc(127 * 100vw / 1920);
+  padding-bottom: clamp(64px, 8vw, 100px);
+  padding-inline: 0;
+  container-type: inline-size;
+  z-index: 2;
+}
+
+.page-dark .project-intro--hellofresh .project-intro__grid {
+  width: 83.333333333%;
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-inline: 0;
+  box-sizing: border-box;
+  grid-template-columns: minmax(0, 722fr) minmax(0, 702fr);
+  column-gap: 6.638977467%;
+}
+
+.page-dark .project-intro--hellofresh .project-intro__title,
+.page-dark .project-intro--hellofresh .project-intro__meta,
+.page-dark .project-intro--hellofresh .project-intro__meta-item,
+.page-dark .project-intro--hellofresh .project-intro__desc,
+.page-dark .project-intro--hellofresh .project-intro__subheadline {
+  font-family: var(--font-tiktok);
+}
+
+.page-dark .project-intro--hellofresh .project-intro__title {
+  color: #fff;
+  font-size: 2.604166667cqw;
+  font-weight: 450;
+  font-variation-settings: normal;
+  letter-spacing: normal;
+  line-height: 1;
+}
+
+.page-dark .project-intro--hellofresh .project-intro__meta,
+.page-dark .project-intro--hellofresh .project-intro__meta-item {
+  font-size: 1.145833333cqw;
+  font-weight: 350;
+  line-height: 1.4;
+  color: var(--color-muted-on-dark);
+}
+
+.page-dark .project-intro--hellofresh .project-intro__meta {
+  gap: 0;
+}
+
+.page-dark .project-intro--hellofresh .project-intro__subheadline {
+  text-transform: none;
+  letter-spacing: normal;
+  color: #E1E1E1;
+  font-size: 1.302083333cqw;
+  font-weight: 550;
+  line-height: 1.35;
+  margin-bottom: 0;
+  opacity: 1;
+  text-wrap: balance;
+}
+
+.page-dark .project-intro--hellofresh .project-intro__desc {
+  color: #E1E1E1;
+  font-size: 1.302083333cqw;
+  font-weight: 450;
+  line-height: 1.35;
+  text-wrap: pretty;
+}
+
+/* Stream Packages — centered body copy (Fortnite capn-takeover__text, gold tone) */
+.page-dark .theme-content-block,
+.page-dark .bond-alerts__header,
+.page-dark .astro-branded__copy,
+.page-dark .astro-alerts__header,
+.page-dark .hitman-branded__header,
+.page-dark .hitman-alerts__header,
+.page-dark .holiday-pack__header {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.page-dark .theme-content-block__desc,
+.page-dark .bond-alerts__desc,
+.page-dark .astro-branded__desc,
+.page-dark .astro-alerts__desc,
+.page-dark .hitman-branded__desc,
+.page-dark .hitman-alerts__desc,
+.page-dark .holiday-pack__desc {
+  width: 100%;
+  color: #DABB7C;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: calc(26 * 100vw / 1920);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: calc(0.26 * 100vw / 1920);
+  text-transform: none;
+  max-width: none;
+  margin: 0 0 calc(36.4 * 100vw / 1920);
+  opacity: 1;
+  white-space: nowrap;
+  text-wrap: normal;
+}
+
+.page-dark .astro-branded__desc,
+.page-dark .astro-alerts__desc {
+  color: #FFF0D7;
+  font-family: 'Raleway', sans-serif;
+  font-size: calc(26 * 100vw / 1920);
+  line-height: 120%;
+  letter-spacing: normal;
+}
+
+.page-dark .holiday-pack__desc {
+  color: #EEFFF9;
+}
+
+.page-dark .hitman-branded__desc,
+.page-dark .hitman-alerts__desc {
+  color: #888888;
+}
+
+.page-dark .theme-content-block__desc:last-child,
+.page-dark .bond-alerts__desc:last-child,
+.page-dark .astro-branded__desc:last-child,
+.page-dark .astro-alerts__desc:last-child,
+.page-dark .hitman-branded__desc:last-child,
+.page-dark .hitman-alerts__desc:last-child,
+.page-dark .holiday-pack__desc:last-child {
+  margin-bottom: 0;
+}
+
+.page-dark .bond-alerts__desc + .bond-alerts__desc {
+  margin-top: 0;
 }
 
 /* ==========================================================
