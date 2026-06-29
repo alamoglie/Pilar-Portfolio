@@ -1184,7 +1184,19 @@ button.nav__link {
 }
 
 .theme-section--holiday::before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: auto;
+  width: 100vw;
+  transform: translateX(-50%);
   background-color: #0d2a1f;
+}
+
+.theme-section--holiday.layout--full {
+  width: 100vw;
+  max-width: none;
+  margin-inline: calc(50% - 50vw);
 }
 
 .theme-section--holiday {
@@ -1204,10 +1216,18 @@ button.nav__link {
   z-index: 0;
 }
 
+.holiday-section-bg.layout--full {
+  width: 100vw;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+
 /* -- Holiday alert pack -- */
 .holiday-pack {
   position: relative;
   z-index: 1;
+  padding-top: calc(112 * 100vw / 1920);
 }
 
 .holiday-pack__header {
