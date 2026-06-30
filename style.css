@@ -186,7 +186,7 @@ ul {
 }
 
 .nav__logo--active {
-  background: rgba(0, 0, 0, 0.75);
+  background: #000;
 }
 
 .nav__logo-img {
@@ -268,7 +268,7 @@ ul {
 }
 
 .nav__link--active {
-  background: rgba(0, 0, 0, 0.75);
+  background: #000;
   color: #FFF;
   font-family: var(--font-tiktok);
   font-size: 16.133px;
@@ -2439,7 +2439,7 @@ html:has(body.page-dark) {
 }
 
 .page-dark .nav__logo:hover {
-  background: rgba(255, 255, 255, 0.75);
+  background: #fff;
 }
 
 .page-dark .nav__logo:hover .nav__logo-img {
@@ -2447,7 +2447,7 @@ html:has(body.page-dark) {
 }
 
 .page-dark .nav__logo--active {
-  background: rgba(255, 255, 255, 0.75);
+  background: #fff;
 }
 
 .page-dark .nav__logo--active .nav__logo-img {
@@ -2473,7 +2473,7 @@ html:has(body.page-dark) {
 }
 
 .page-dark .nav__link--active {
-  background: rgba(255, 255, 255, 0.75);
+  background: #fff;
   color: #000;
   font-family: var(--font-tiktok);
   font-size: 16.133px;
