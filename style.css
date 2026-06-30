@@ -18,14 +18,16 @@
   --color-accent-o: #e84b00;
   --color-overlay: rgba(0, 0, 0, 0.30);
 
-  --nav-height: 80px;
+  --nav-height: 55px;
   --hero-max-h: 80vh;
   --design-width: 1440px;
   --site-max-width: 1920px;
   --layout-narrow-max: 1400px;
   --layout-narrow-ratio: 0.729;
+  --layout-medium-ratio: 0.94;
   --layout-shell-width: min(100vw, var(--site-max-width));
   --layout-narrow-width: min(var(--layout-narrow-max), calc(var(--layout-shell-width) * var(--layout-narrow-ratio)));
+  --layout-medium-width: calc(var(--layout-shell-width) * var(--layout-medium-ratio));
   --content-margin: clamp(20px, 7.778vw, 112px);
   --content-max-width: calc(var(--design-width) - 2 * 112px);
 
@@ -60,7 +62,7 @@ body {
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
-  padding-top: var(--nav-height);
+  padding-top: 0;
   width: min(100%, var(--site-max-width));
   margin-inline: auto;
 }
@@ -90,61 +92,129 @@ ul {
 /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    NAVIGATION
    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.nav-spacer {
+  width: 100%;
+  height: 0;
+  pointer-events: none;
+}
+
 .nav-wrapper {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  background: transparent;
+}
+
+.nav-wrapper:not(.nav-wrapper--fixed) .nav {
+  background: #fff;
+}
+
+.nav-wrapper--fixed {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
-  width: 100%;
-  background: var(--color-bg);
-  transition: transform 0.3s ease;
-  will-change: transform;
+  background: transparent;
 }
 
-.nav-wrapper--hidden {
-  transform: translateY(-100%);
+.nav-wrapper.nav-wrapper--fixed {
+  background: transparent;
+}
+
+.nav-wrapper--fixed .nav {
+  background: transparent;
+}
+
+.nav__island {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: var(--nav-height);
+  background: transparent;
+}
+
+.nav-wrapper--fixed .nav__island,
+.nav-wrapper--island .nav__island {
+  background: #fff;
+  width: fit-content;
+  flex: 0 0 auto;
+}
+
+.nav-wrapper--island .nav__island--left {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.nav-wrapper--island .nav__island--right {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .nav {
   display: flex;
-  align-items: center;
-  gap: 30px;
-  height: var(--nav-height);
-  padding: 0 30px;
-  color: rgba(255, 255, 255, 1);
-  border: none;
-  border-image: none;
+  align-items: stretch;
+  justify-content: space-between;
+  min-height: var(--nav-height);
+  box-sizing: border-box;
+  background: transparent;
 }
 
-/* Logo image */
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--nav-height);
+  height: var(--nav-height);
+  line-height: 0;
+}
+
 .nav__logo-img {
-  width: 46px;
-  height: 49px;
+  width: 28px;
+  height: 28px;
   display: block;
+  margin: 0;
   transition: opacity 0.2s var(--ease-out);
 }
 
 .nav__logo:hover .nav__logo-img {
-  opacity: 0.8
+  opacity: 0.75;
 }
 
-/* Nav links */
 .nav__links {
   display: flex;
-  gap: 39px;
+  align-items: stretch;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__links li {
+  display: flex;
+  align-items: stretch;
 }
 
 .nav__link {
-  font-family: var(--font-body);
-  font-size: 17px;
-  font-weight: 550;
-  color: var(--color-nav-link);
+  font-family: var(--font-tiktok);
+  font-size: 16.133px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #000;
   position: relative;
-  padding-bottom: 1px;
-  bottom: 1px;
-  margin-left: -8px;
-  margin-right: -8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 68px;
+  height: 55px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
   transition: opacity 0.2s;
 }
 
@@ -152,24 +222,38 @@ ul {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -5px;
-  width: 0px;
-  height: 3.7px;
-  background: var(--color-text);
+  bottom: 8px;
+  width: 0;
+  height: 2px;
+  background: #000;
   transition: width 0.25s var(--ease-out);
 }
 
-.nav__link:hover {
+.nav__link:not(.nav__link--active):hover {
   opacity: 0.75;
 }
 
-.nav__link:hover::after,
-.nav__link--active::after {
-  width: 30px;
+.nav__link:not(.nav__link--active):hover::after {
+  width: calc(100% - 20px);
+  left: 10px;
 }
 
 .nav__link--active {
-  font-weight: 600;
+  background: #000;
+  color: #FFF;
+  font-family: var(--font-tiktok);
+  font-size: 16.133px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.nav__link--active::after {
+  display: none;
+}
+
+button.nav__link {
+  font: inherit;
 }
 
 /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -468,13 +552,18 @@ ul {
     --hero-max-h: 80vh;
   }
 
-  .nav {
-    gap: 20px;
-    padding: 0 16px;
+  .nav.layout--wide {
+    max-width: min(var(--site-max-width), var(--layout-viewport-cap));
   }
 
-  .nav__links {
-    gap: 18px;
+  .nav__island {
+    gap: 12px;
+  }
+
+  .nav__link {
+    min-width: 56px;
+    font-size: 14px;
+    padding: 0 8px;
   }
 
   .hero__play {
@@ -500,16 +589,9 @@ ul {
 /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    WORK PAGE FILTER NAV â€” additive only
    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Work page — filter island (right cluster) */
 .nav__filters {
-  margin-left: auto;
-}
-
-button.nav__link {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font: inherit;
-  padding: 0;
+  margin-left: 0;
 }
 
 
@@ -539,11 +621,19 @@ button.nav__link {
    bleed      → layout--bleed  (100% — heroes, headline images only)
    full-width → layout--full    (100% of page column)
    wide       → layout--wide    (100%, optional max via --site-max-width)
+   medium     → layout--medium  (94% of shell wide, centered)
    narrow     → layout--narrow  (min(1400px, 72.9% of shell), centered) */
 .layout--wide {
   width: 100%;
   max-width: var(--site-max-width);
   margin-inline: auto;
+}
+
+.layout--medium {
+  width: var(--layout-medium-width);
+  max-width: 100%;
+  margin-inline: auto;
+  box-sizing: border-box;
 }
 
 .layout--narrow {
@@ -559,12 +649,19 @@ button.nav__link {
   .hitman-talk.layout--wide,
   .astro-talk.layout--wide,
   .scene-fullwidth.layout--wide,
+  .layout--medium,
   .layout--narrow,
   .project-container .other-projects.layout--wide,
   img.layout--wide,
+  img.layout--medium,
   img.layout--narrow,
-  video.layout--wide {
+  video.layout--wide,
+  video.layout--medium {
     max-width: var(--layout-viewport-cap);
+  }
+
+  .layout--medium {
+    width: min(var(--layout-medium-width), var(--layout-viewport-cap));
   }
 
   .layout--narrow {
@@ -1678,11 +1775,18 @@ html:has(body.page-fanta) {
   background-color: var(--color-bg-white);
 }
 
-.page-hello-fresh .nav-wrapper,
-.page-capn-crunch .nav-wrapper,
-.page-fortnite .nav-wrapper,
-.page-fanta .nav-wrapper {
-  background: var(--color-bg-white);
+.page-hello-fresh .nav-wrapper:not(.nav-wrapper--fixed) .nav,
+.page-capn-crunch .nav-wrapper:not(.nav-wrapper--fixed) .nav,
+.page-fortnite .nav-wrapper:not(.nav-wrapper--fixed) .nav,
+.page-fanta .nav-wrapper:not(.nav-wrapper--fixed) .nav {
+  background: #fff;
+}
+
+.page-hello-fresh .nav-wrapper.nav-wrapper--fixed,
+.page-capn-crunch .nav-wrapper.nav-wrapper--fixed,
+.page-fortnite .nav-wrapper.nav-wrapper--fixed,
+.page-fanta .nav-wrapper.nav-wrapper--fixed {
+  background: transparent;
 }
 
 .page-hello-fresh .layout--bleed,
@@ -2161,16 +2265,35 @@ html:has(body.page-dark) {
   overflow-x: visible;
 }
 
-.page-dark .nav-wrapper {
-  background-color: var(--color-bg-dark);
+.page-dark .nav-wrapper:not(.nav-wrapper--fixed) .nav {
+  background-color: #fff;
+}
+
+.page-dark .nav-wrapper.nav-wrapper--fixed {
+  background: transparent;
 }
 
 .page-dark .nav__link {
-  color: var(--color-text-on-dark);
+  color: #000;
+  font-family: var(--font-tiktok);
+  font-size: 16.133px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .page-dark .nav__link::after {
-  background: var(--color-text-on-dark);
+  background: #000;
+}
+
+.page-dark .nav__link--active {
+  background: #000;
+  color: #FFF;
+  font-family: var(--font-tiktok);
+  font-size: 16.133px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .page-dark .project-intro__title,

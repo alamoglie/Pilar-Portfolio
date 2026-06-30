@@ -1,30 +1,87 @@
 /**
- * Hide-on-scroll navbar
- * - Oculta la navbar con transform: translateY(-100%) al scrollear hacia abajo
- * - La muestra nuevamente al scrollear hacia arriba
- * - Solo se activa después de los 80px desde el top
+ * Floating island navbar — GSAP + ScrollTrigger
+ * Top: full-width white bar. Scrolled: fixed transparent shell + white edge islands.
  */
 (function () {
-  const nav = document.querySelector('.nav-wrapper');
-  if (!nav) return;
+  const navWrapper = document.getElementById('nav-wrapper');
+  if (!navWrapper) return;
 
-  const THRESHOLD = 80; // px desde el top antes de activar
-  let lastScrollY = window.scrollY;
+  let navSpacer = document.getElementById('nav-spacer');
+  if (!navSpacer) {
+    navSpacer = document.createElement('div');
+    navSpacer.id = 'nav-spacer';
+    navSpacer.className = 'nav-spacer';
+    navSpacer.setAttribute('aria-hidden', 'true');
+    navWrapper.insertAdjacentElement('afterend', navSpacer);
+  }
 
-  window.addEventListener('scroll', function () {
-    const currentScrollY = window.scrollY;
+  const islands = navWrapper.querySelectorAll('.nav__island');
+  let islandActive = false;
 
-    if (currentScrollY <= THRESHOLD) {
-      // Siempre visible cerca del top
-      nav.classList.remove('nav-wrapper--hidden');
-    } else if (currentScrollY > lastScrollY) {
-      // Scrolleando hacia abajo → ocultar
-      nav.classList.add('nav-wrapper--hidden');
+  function syncSpacer() {
+    navSpacer.style.height = islandActive ? `${navWrapper.offsetHeight}px` : '0';
+  }
+
+  function setIslandMode(active, animate) {
+    if (active === islandActive) return;
+    islandActive = active;
+
+    if (active) {
+      navWrapper.classList.add('nav-wrapper--fixed', 'nav-wrapper--island');
+      syncSpacer();
+
+      if (animate && window.gsap) {
+        window.gsap.fromTo(
+          islands,
+          { scale: 0.96, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.35,
+            ease: 'power2.out',
+            stagger: 0.05,
+            overwrite: true,
+          }
+        );
+      }
     } else {
-      // Scrolleando hacia arriba → mostrar
-      nav.classList.remove('nav-wrapper--hidden');
+      navWrapper.classList.remove('nav-wrapper--fixed', 'nav-wrapper--island');
+      navSpacer.style.height = '0';
+
+      if (animate && window.gsap) {
+        window.gsap.set(islands, { scale: 1, opacity: 1, clearProps: 'transform' });
+      }
+    }
+  }
+
+  function initScrollTrigger() {
+    if (!window.gsap || !window.ScrollTrigger) {
+      window.addEventListener(
+        'scroll',
+        function () {
+          const top = navSpacer.getBoundingClientRect().top;
+          setIslandMode(top <= 0, false);
+        },
+        { passive: true }
+      );
+      return;
     }
 
-    lastScrollY = currentScrollY;
-  }, { passive: true });
+    window.gsap.registerPlugin(window.ScrollTrigger);
+
+    window.ScrollTrigger.create({
+      trigger: navSpacer,
+      start: 'top top',
+      onEnter: () => setIslandMode(true, true),
+      onLeaveBack: () => setIslandMode(false, true),
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScrollTrigger);
+  } else {
+    initScrollTrigger();
+  }
+
+  window.addEventListener('resize', syncSpacer, { passive: true });
 })();

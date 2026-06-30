@@ -19,20 +19,21 @@
 <body class="page-capn-crunch">
 
   <!-- ── NAVIGATION ── -->
-  <header class="nav-wrapper">
-    <nav class="nav" id="main-nav" aria-label="Main navigation">
-      <a href="index.html" class="nav__logo" aria-label="Pilar Meaca home">
-        <img src="images/shared/icon.svg" alt="Pilar Meaca Logo" class="nav__logo-img" />
-      </a>
-
-      <ul class="nav__links" role="list">
-        <li><a href="index.html" class="nav__link">Home</a></li>
-        <li><a href="work.html" class="nav__link nav__link--active" aria-current="page">Work</a></li>
-        <li><a href="/reel" class="nav__link">Reel</a></li>
-        <li><a href="/about" class="nav__link">About</a></li>
-      </ul>
+  <header class="nav-wrapper" id="nav-wrapper">
+    <nav class="nav layout--wide" id="main-nav" aria-label="Main navigation">
+      <div class="nav__island nav__island--left">
+        <a href="index.html" class="nav__logo" aria-label="Pilar Meaca home">
+          <img src="images/shared/icon.svg" alt="" class="nav__logo-img" width="28" height="28" />
+        </a>
+        <ul class="nav__links nav__links--primary" role="list">
+          <li><a href="work.html" class="nav__link nav__link--active" aria-current="page">Work</a></li>
+          <li><a href="/reel" class="nav__link">Reel</a></li>
+          <li><a href="/about" class="nav__link">About</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
+  <div class="nav-spacer" id="nav-spacer" aria-hidden="true"></div>
 
   <main class="project-container layout--full">
 
@@ -214,6 +215,8 @@
   </script>
 
   <script src="components.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="main.js"></script>
 </body>
 
