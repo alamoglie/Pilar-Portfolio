@@ -20,7 +20,7 @@
 
   <!-- ── NAVIGATION ── -->
   <header class="nav-wrapper" id="nav-wrapper">
-    <nav class="nav layout--wide" id="main-nav" aria-label="Main navigation">
+    <nav class="nav layout--medium" id="main-nav" aria-label="Main navigation">
       <div class="nav__island nav__island--left">
         <a href="index.html" class="nav__logo" aria-label="Pilar Meaca home">
           <img src="images/shared/icon.svg" alt="" class="nav__logo-img" width="32" height="32" />
@@ -31,6 +31,17 @@
           <li><a href="/about" class="nav__link"><span class="nav__link-text">About</span></a></li>
         </ul>
       </div>
+
+      <div class="nav__island nav__island--right">
+        <ul class="nav__links nav__filters" role="list" aria-label="Filter projects">
+          <li>
+            <button type="button" class="nav__link nav__link--active" data-work-filter="featured" aria-pressed="true"><span class="nav__link-text">Featured</span></button>
+          </li>
+          <li>
+            <button type="button" class="nav__link" data-work-filter="all" aria-pressed="false"><span class="nav__link-text">All</span></button>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
   <div class="nav-spacer" id="nav-spacer" aria-hidden="true"></div>
@@ -38,8 +49,8 @@
   <main class="project-container layout--full">
 
     <!-- ── SECTION 1: HERO ── -->
-    <section class="project-hero layout--wide" aria-label="Alerts in stream preview">
-      <video class="project-hero__image layout--wide" autoplay muted loop playsinline preload="auto"
+    <section class="project-hero vw-shell" aria-label="Alerts in stream preview">
+      <video class="project-hero__image vw-block vw-92" autoplay muted loop playsinline preload="auto"
         aria-label="Alerts in stream headline preview">
         <source src="images/alerts-in-stream/headline.webm" type="video/webm" />
       </video>
@@ -70,10 +81,10 @@
     <section class="theme-section theme-section--hellofresh layout--full" aria-label="HelloFresh Campaign">
 
       <!-- HelloFresh Video Assets Stack -->
-      <div class="hellofresh-stack layout--medium hellofresh-stack--fill">
+      <div class="hellofresh-stack vw-shell hellofresh-stack--fill">
         <!-- 1. Alerts 1 -->
         <div class="hellofresh-media">
-          <video class="hellofresh-media__image" autoplay muted loop playsinline preload="auto"
+          <video class="hellofresh-media__image browser-92" autoplay muted loop playsinline preload="auto"
             aria-label="In stream alerts preview">
             <source src="images/alerts-in-stream/Alerts1.webm" type="video/webm" />
           </video>
@@ -81,7 +92,7 @@
 
         <!-- 2. Alerts 2 -->
         <div class="hellofresh-media">
-          <video class="hellofresh-media__image" autoplay muted loop playsinline preload="auto"
+          <video class="hellofresh-media__image browser-92" autoplay muted loop playsinline preload="auto"
             aria-label="In stream alerts preview">
             <source src="images/alerts-in-stream/Alerts2.webm" type="video/webm" />
           </video>
@@ -89,7 +100,7 @@
 
         <!-- 3. Alerts 3 -->
         <div class="hellofresh-media">
-          <video class="hellofresh-media__image" autoplay muted loop playsinline preload="auto"
+          <video class="hellofresh-media__image browser-92" autoplay muted loop playsinline preload="auto"
             aria-label="In stream alerts preview">
             <source src="images/alerts-in-stream/Alerts3.webm" type="video/webm" />
           </video>
@@ -97,7 +108,7 @@
 
         <!-- 4. Alerts 4 -->
         <div class="hellofresh-media">
-          <video class="hellofresh-media__image" autoplay muted loop playsinline preload="auto"
+          <video class="hellofresh-media__image browser-92" autoplay muted loop playsinline preload="auto"
             aria-label="In stream alerts preview">
             <source src="images/alerts-in-stream/Alerts4.webm" type="video/webm" />
           </video>
@@ -105,7 +116,7 @@
 
         <!-- 5. Alerts 5 -->
         <div class="hellofresh-media">
-          <video class="hellofresh-media__image" autoplay muted loop playsinline preload="auto"
+          <video class="hellofresh-media__image browser-92" autoplay muted loop playsinline preload="auto"
             aria-label="In stream alerts preview">
             <source src="images/alerts-in-stream/Alerts5.webm" type="video/webm" />
           </video>

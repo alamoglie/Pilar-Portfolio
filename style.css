@@ -19,6 +19,8 @@
   --color-overlay: rgba(0, 0, 0, 0.30);
 
   --nav-height: 55px;
+  --vw-92: 92vw;
+  --nav-width: var(--vw-92);
   --nav-top-offset: 20px;
   --nav-bottom-offset: 20px;
   --hero-max-h: 80vh;
@@ -37,6 +39,7 @@
   --layout-bleed-width: 100vw;
   --layout-cap-breakpoint: 2050px;
   --layout-viewport-cap: 90vw;
+  --layout-content-width: var(--layout-medium-width);
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -103,7 +106,11 @@ ul {
 .nav-wrapper {
   position: relative;
   z-index: 100;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   background: transparent;
   padding-top: var(--nav-top-offset);
   margin-bottom: var(--nav-bottom-offset);
@@ -115,6 +122,10 @@ ul {
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  transform: none;
   margin-bottom: 0;
   background: transparent;
 }
@@ -573,10 +584,6 @@ button.nav__link {
     --hero-max-h: 80vh;
   }
 
-  .nav.layout--wide {
-    max-width: min(var(--site-max-width), var(--layout-viewport-cap));
-  }
-
   .nav__link {
     min-width: 56px;
     font-size: 14px;
@@ -642,6 +649,34 @@ button.nav__link {
   box-sizing: border-box;
 }
 
+/* Viewport width — N% of browser, always centered */
+.vw-shell {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+}
+
+.vw-block {
+  width: var(--vw-width);
+  max-width: var(--vw-width);
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
+.vw-92 {
+  --vw-width: var(--vw-92);
+}
+
+.browser-92 {
+  width: var(--vw-92);
+  max-width: var(--vw-92);
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
 /* Layout width utilities
    bleed      → layout--bleed  (100% — heroes, headline images only)
    full-width → layout--full    (100% of page column)
@@ -655,7 +690,7 @@ button.nav__link {
 }
 
 .layout--medium {
-  width: var(--layout-medium-width);
+  width: var(--layout-content-width);
   max-width: 100%;
   margin-inline: auto;
   box-sizing: border-box;
@@ -670,6 +705,10 @@ button.nav__link {
 
 /* Below 2050px: wide/narrow containers and tagged images cap at 90vw */
 @media (max-width: 2049px) {
+  :root {
+    --layout-content-width: min(var(--layout-medium-width), var(--layout-viewport-cap));
+  }
+
   .layout--wide,
   .hitman-talk.layout--wide,
   .astro-talk.layout--wide,
@@ -686,7 +725,7 @@ button.nav__link {
   }
 
   .layout--medium {
-    width: min(var(--layout-medium-width), var(--layout-viewport-cap));
+    width: var(--layout-content-width);
   }
 
   .layout--narrow {
@@ -703,6 +742,36 @@ button.nav__link {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.project-hero.vw-shell .project-hero__image,
+.project-hero.layout--medium .project-hero__image {
+  width: var(--vw-92);
+  max-width: var(--vw-92);
+  height: auto;
+  display: block;
+  flex: 0 0 auto;
+}
+
+.project-hero.vw-shell,
+.project-hero.layout--medium {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+}
+
+.nav.layout--medium,
+.nav.layout--wide,
+#main-nav {
+  width: var(--vw-92);
+  min-width: var(--vw-92);
+  max-width: var(--vw-92);
+  margin-inline: auto;
+  flex: 0 0 auto;
+  box-sizing: border-box;
 }
 
 .project-intro {
@@ -2039,12 +2108,27 @@ html:has(body.page-fanta) {
   gap: 10px;
 }
 
+.hellofresh-stack.vw-shell,
+.hellofresh-stack.layout--medium {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+}
+
 .hellofresh-media {
   position: relative;
   width: 100%;
   border-radius: 0;
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.hellofresh-media:has(.browser-92) {
+  width: auto;
 }
 
 .hellofresh-media__image {
@@ -2089,6 +2173,18 @@ html:has(body.page-fanta) {
   object-fit: unset;
   object-position: center;
   display: block;
+}
+
+.hellofresh-stack.vw-shell .hellofresh-media video,
+.hellofresh-stack.layout--medium .hellofresh-media video,
+.hellofresh-media__image.browser-92,
+.hellofresh-media video.hellofresh-media__image.browser-92 {
+  width: var(--vw-92);
+  max-width: var(--vw-92);
+  height: auto;
+  display: block;
+  object-fit: unset;
+  flex: 0 0 auto;
 }
 
 .hellofresh-media__play {

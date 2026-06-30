@@ -85,3 +85,14 @@
 
   window.addEventListener('resize', syncSpacer, { passive: true });
 })();
+
+(function initWorkFilterNav() {
+  const filterButtons = document.querySelectorAll('[data-work-filter]');
+  if (!filterButtons.length || document.querySelector('.work-item')) return;
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      window.location.href = `work.html?filter=${button.dataset.workFilter}`;
+    });
+  });
+})();

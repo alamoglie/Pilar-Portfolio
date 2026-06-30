@@ -25,5 +25,5 @@
     });
   });
 
-  applyFilter('featured');
+  applyFilter(new URLSearchParams(window.location.search).get('filter') === 'all' ? 'all' : 'featured');
 })();
