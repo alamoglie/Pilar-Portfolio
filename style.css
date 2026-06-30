@@ -1153,6 +1153,10 @@ button.nav__link {
 
 .astro-alerts__grid-wrap {
   position: relative;
+  width: min(57vw, 1094px);
+  max-width: min(57vw, 1094px);
+  margin-inline: auto;
+  box-sizing: border-box;
 }
 
 .astro-alerts__grid-image {
@@ -1306,10 +1310,22 @@ button.nav__link {
   margin-inline: auto;
 }
 
+.hitman-talk.browser-shell .hitman-scene {
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  flex: 0 0 auto;
+}
+
 .astro-talk.layout--wide {
   width: 100%;
   max-width: var(--site-max-width);
   margin-inline: auto;
+}
+
+.astro-talk.browser-shell .astro-scene {
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  flex: 0 0 auto;
 }
 
 .hitman-talk .hitman-scene {
@@ -1621,6 +1637,10 @@ button.nav__link {
   width: 100%;
   max-width: var(--site-max-width);
   margin-inline: auto;
+  padding-inline: 0;
+}
+
+.scene-fullwidth.browser-shell {
   padding-inline: 0;
 }
 
@@ -2405,7 +2425,51 @@ html:has(body.page-dark) {
   background: transparent;
 }
 
+/* Navbar invertida: fondo negro, texto blanco */
+.page-dark .nav__logo {
+  background: #000;
+}
+
+.page-dark .nav__logo-img {
+  filter: invert(1);
+}
+
+.page-dark .nav__logo:hover {
+  background: #fff;
+}
+
+.page-dark .nav__logo:hover .nav__logo-img {
+  filter: none;
+}
+
+.page-dark .nav__logo--active {
+  background: #fff;
+}
+
+.page-dark .nav__logo--active .nav__logo-img {
+  filter: none;
+}
+
 .page-dark .nav__link {
+  background: #000;
+  color: #fff;
+  font-family: var(--font-tiktok);
+  font-size: 16.133px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.page-dark .nav__link-text::after {
+  background: #fff;
+}
+
+.page-dark .nav__link:not(.nav__link--active):hover .nav__link-text::after {
+  background: #fff;
+}
+
+.page-dark .nav__link--active {
+  background: #fff;
   color: #000;
   font-family: var(--font-tiktok);
   font-size: 16.133px;
@@ -2414,18 +2478,8 @@ html:has(body.page-dark) {
   line-height: normal;
 }
 
-.page-dark .nav__link::after {
+.page-dark .nav__link--active .nav__link-text::after {
   background: #000;
-}
-
-.page-dark .nav__link--active {
-  background: #000;
-  color: #FFF;
-  font-family: var(--font-tiktok);
-  font-size: 16.133px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 }
 
 .page-dark .project-intro__title,
