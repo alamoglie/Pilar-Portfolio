@@ -44,6 +44,7 @@
   --layout-content-width: var(--layout-medium-width);
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -579,28 +580,25 @@ button.nav__link {
 }
 
 .work-pair {
-  --pair-image-w-wide: min(calc(1195 / 1920 * 100vw), 1195px);
-  --pair-image-w-narrow: min(calc(531 / 1920 * 100vw), 531px);
-  --pair-image-h: min(calc(673 / 1920 * 100vw), 673px);
-  --pair-gap: min(calc(16 / 1920 * 100vw), 16px);
-  display: grid;
-  grid-template-columns: var(--pair-image-w-wide) var(--pair-image-w-narrow);
-  gap: var(--pair-gap);
-  width: fit-content;
+  width: var(--browser-92);
   max-width: var(--browser-92);
+  --pair-gap: min(calc(16 / 1920 * 100vw), 16px);
+  --pair-image-h: min(calc(673 / 1920 * 100vw), 673px);
+  display: grid;
+  grid-template-columns: 1195fr 531fr;
+  gap: var(--pair-gap);
   box-sizing: border-box;
 }
 
 .work-pair--reversed {
-  --pair-image-w-narrow: min(calc(602 / 1920 * 100vw), 602px);
-  --pair-image-w-wide: min(calc(1123 / 1920 * 100vw), 1123px);
   --pair-image-h: min(calc(559 / 1920 * 100vw), 559px);
-  grid-template-columns: var(--pair-image-w-narrow) var(--pair-image-w-wide);
+  grid-template-columns: 602fr 1123fr;
 }
 
 .work-pair .work-item {
   width: 100%;
   max-width: 100%;
+  min-width: 0;
 }
 
 .work-pair .work-item__image-wrapper {
@@ -635,10 +633,25 @@ button.nav__link {
   font-style: normal;
   font-weight: 350;
   line-height: 140%;
+  text-transform: uppercase;
 }
 .work-item__image-wrapper,
 .work-item__info {
   width: 100%;
+}
+
+.work-grid .work-item__image-wrapper {
+  overflow: hidden;
+}
+
+.work-grid .work-item__image {
+  transform-origin: center center;
+  transition: transform 0.55s var(--ease-in-out);
+}
+
+.work-grid .work-item:hover .work-item__image,
+.work-grid .work-item__link:hover .work-item__image {
+  transform: scale(1.06);
 }
 
 /* ImÃ¡genes con margen lateral (112px en 1440px) â€” fondo blanco visible a los costados */
@@ -664,10 +677,6 @@ button.nav__link {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
-}
-
-.work-item__link:hover {
-  opacity: 0.92;
 }
 
 /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -2627,6 +2636,11 @@ html:has(body.page-dark) {
   color: var(--color-muted-on-dark);
 }
 
+.page-dark .site-footer__time-icon {
+  filter: invert(1);
+  opacity: 0.65;
+}
+
 /* Stream Packages — intro (Fortnite layout, inverted dark theme) */
 .page-dark .project-intro--hellofresh::before {
   content: "";
@@ -2850,6 +2864,19 @@ html:has(body.page-dark) {
 }
 
 .site-footer__link:hover { opacity: 0.5; }
+
+.site-footer__time-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(2.752 / 1920 * var(--viewport-1920));
+}
+
+.site-footer__time-icon {
+  width: calc(20 / 1920 * var(--viewport-1920));
+  height: calc(20 / 1920 * var(--viewport-1920));
+  flex-shrink: 0;
+  display: block;
+}
 
 .site-footer__time {
   color: #000;
