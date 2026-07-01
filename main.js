@@ -48,7 +48,7 @@
     <div class="reel-modal__backdrop" data-reel-close tabindex="-1"></div>
     <div class="reel-modal__panel" role="dialog" aria-modal="true" aria-label="Showreel" tabindex="-1">
       <button type="button" class="reel-modal__close" data-reel-close aria-label="Close showreel">×</button>
-      <video class="reel-modal__video browser-92" controls playsinline preload="metadata">
+      <video class="reel-modal__video layout--narrow" controls playsinline preload="metadata">
         <source src="${REEL_SRC}" type="video/webm" />
       </video>
     </div>
@@ -83,8 +83,10 @@
     });
   });
 
-  modal.querySelectorAll('[data-reel-close]').forEach((el) => {
-    el.addEventListener('click', closeReel);
+  modal.addEventListener('click', (event) => {
+    if (!modal.classList.contains('is-open')) return;
+    if (event.target.closest('.reel-modal__video')) return;
+    closeReel();
   });
 
   document.addEventListener('keydown', (event) => {

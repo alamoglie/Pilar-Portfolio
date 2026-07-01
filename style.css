@@ -4042,7 +4042,8 @@ body.reel-modal-open {
 .reel-modal__panel {
   position: relative;
   z-index: 1;
-  width: 100%;
+  width: fit-content;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   transform: translateY(48px);
@@ -4053,9 +4054,7 @@ body.reel-modal-open {
   transform: translateY(0);
 }
 
-.reel-modal__video.browser-92 {
-  width: var(--browser-92);
-  max-width: var(--browser-92);
+.reel-modal__video.layout--narrow {
   height: auto;
   display: block;
   background: #000;
