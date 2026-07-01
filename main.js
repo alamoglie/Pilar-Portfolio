@@ -93,3 +93,25 @@
     if (event.key === 'Escape' && modal.classList.contains('is-open')) closeReel();
   });
 })();
+
+window.initFooterTime = function initFooterTime() {
+  if (window.__footerTimeInit) return;
+
+  const timeEl = document.getElementById('footer-time');
+  if (!timeEl) return;
+
+  window.__footerTimeInit = true;
+
+  function updateTime() {
+    const ba = new Date().toLocaleTimeString('en-US', {
+      timeZone: 'America/Argentina/Buenos_Aires',
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true
+    });
+    timeEl.textContent = 'BA ' + ba;
+  }
+
+  updateTime();
+  setInterval(updateTime, 30000);
+};

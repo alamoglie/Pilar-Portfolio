@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="About Pilar Meaca — motion graphics designer and art director with 15+ years of experience across broadcast, product development, and video games. Based in Buenos Aires." />
+  <title>Pilar Meaca — About</title>
+  <link rel="icon" type="image/svg+xml" href="images/shared/icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter:wght@100..900&family=TikTok+Sans:wdth,wght@75..125,300..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="page-about">
+
+  <header class="nav-wrapper" id="nav-wrapper">
+    <nav class="nav layout--medium" id="main-nav" aria-label="Main navigation">
+      <div class="nav__island nav__island--left">
+        <a href="index.html" class="nav__logo" aria-label="Pilar Meaca home">
+          <img src="images/shared/icon.svg" alt="" class="nav__logo-img" width="32" height="32" />
+        </a>
+        <ul class="nav__links nav__links--primary" role="list">
+          <li><a href="work.html" class="nav__link"><span class="nav__link-text">Work</span></a></li>
+          <li><a href="/reel" class="nav__link"><span class="nav__link-text">Reel</span></a></li>
+          <li><a href="about.html" class="nav__link nav__link--active" aria-current="page"><span class="nav__link-text">About</span></a></li>
+        </ul>
+      </div>
+
+      <div class="nav__island nav__island--right">
+        <ul class="nav__links nav__filters" role="list" aria-label="Filter projects">
+          <li>
+            <button type="button" class="nav__link nav__link--active" data-work-filter="featured" aria-pressed="true"><span class="nav__link-text">Featured</span></button>
+          </li>
+          <li>
+            <button type="button" class="nav__link" data-work-filter="all" aria-pressed="false"><span class="nav__link-text">All</span></button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="nav-spacer" id="nav-spacer" aria-hidden="true"></div>
+
+  <main>
+    <section class="about browser-86" aria-labelledby="about-title">
+      <header class="about__header">
+        <h1 class="about__title" id="about-title">
+          <span class="about__title-text">About me</span>
+          <span class="about__wave" aria-hidden="true">👋</span>
+        </h1>
+      </header>
+
+      <div class="about__body">
+        <div class="about__intro">
+          <p>I'm Pilar Meaca, a Graphic and Motion Designer, based in Buenos Aires, Argentina.</p>
+          <p>For more than 15 years, I've been creating motion graphics, branding, and visual experiences across broadcast and digital products. My background includes work for TV production studios, design agencies, Fox Latin America Channels, and The Walt Disney Company.</p>
+          <p>Most recently, I spent six years at StreamElements, designing creator-focused products, sponsorship experiences, and interactive tools for live streaming platforms such as Twitch and YouTube.</p>
+          <p>Interested in working together? Feel free to get in touch at <a href="mailto:pilarmeaca@gmail.com" class="about__email">pilarmeaca@gmail.com</a>.</p>
+        </div>
+
+        <section class="about__section" aria-labelledby="about-tools">
+          <h2 class="about__section-title" id="about-tools">Tools</h2>
+          <ul class="about__list" role="list">
+            <li>Adobe After Effects</li>
+            <li>Adobe Photoshop</li>
+            <li>Adobe Illustrator</li>
+            <li>Adobe Premiere</li>
+            <li>Cinema 4D</li>
+            <li>Figma</li>
+            <li>Lottie</li>
+          </ul>
+        </section>
+
+        <section class="about__section" aria-labelledby="about-experience">
+          <h2 class="about__section-title" id="about-experience">Work Experience</h2>
+          <ul class="about__experience" role="list">
+            <li><span class="about__experience-dates">2020 - 2026</span> StreamElements</li>
+            <li><span class="about__experience-dates">2018 - 2020</span> The Walt Disney Company</li>
+            <li><span class="about__experience-dates">2015 - 2018</span> Fox Latin American Channels</li>
+            <li><span class="about__experience-dates">2012 - 2015</span> Bonsai3</li>
+            <li><span class="about__experience-dates">2009 - 2012</span> GP Producciones</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <div data-component="site-footer"></div>
+  </main>
+
+  <script src="main.js" defer></script>
+  <script src="components.js" defer></script>
+</body>
+
+</html>

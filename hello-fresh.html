@@ -28,7 +28,7 @@
         <ul class="nav__links nav__links--primary" role="list">
           <li><a href="work.html" class="nav__link nav__link--active" aria-current="page"><span class="nav__link-text">Work</span></a></li>
           <li><a href="/reel" class="nav__link"><span class="nav__link-text">Reel</span></a></li>
-          <li><a href="/about" class="nav__link"><span class="nav__link-text">About</span></a></li>
+          <li><a href="about.html" class="nav__link"><span class="nav__link-text">About</span></a></li>
         </ul>
       </div>
 
@@ -150,42 +150,13 @@
     <div data-component="other-projects"></div>
 
     <!-- ── SITE FOOTER ── -->
-    <footer class="site-footer">
-      <div class="site-footer__top">
-        <span class="site-footer__copy">2026 Pilar Meaca®</span>
-        <a href="#top" class="site-footer__back">Back to top ↑</a>
-      </div>
-      <div class="site-footer__bottom">
-        <a href="mailto:pilarmeaca@gmail.com" class="site-footer__link">pilarmeaca@gmail.com</a>
-        <a href="https://www.linkedin.com/in/pilar-meaca/" target="_blank" rel="noopener" class="site-footer__link">LinkedIn</a>
-        <span class="site-footer__time-wrap">
-          <img src="images/world.svg" alt="" class="site-footer__time-icon" width="20" height="20" />
-          <span class="site-footer__time" id="footer-time">BA</span>
-        </span>
-      </div>
-    </footer>
+        <div data-component="site-footer"></div>
 
   </main>
-
-  <script>
-    function updateTime() {
-      const now = new Date();
-      const ba = now.toLocaleTimeString('en-US', {
-        timeZone: 'America/Argentina/Buenos_Aires',
-        hour: 'numeric',
-        minute: '2-digit',
-        hour12: true
-      });
-      document.getElementById('footer-time').textContent = 'BA ' + ba;
-    }
-    updateTime();
-    setInterval(updateTime, 30000);
-  </script>
-
-  <script src="components.js" defer></script>
+<script src="components.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 
 </html>

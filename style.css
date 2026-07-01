@@ -20,6 +20,7 @@
 
   --nav-height: 55px;
   --browser-92: min(92vw, 1766px);
+  --browser-86: min(86vw, 1651px);
   --browser-83: min(83vw, 1594px);
   --nav-width: var(--browser-92);
   --nav-top-offset: 20px;
@@ -78,7 +79,15 @@ html:has(.page-home) {
   background-color: var(--color-bg-white);
 }
 
+html:has(.page-about) {
+  background-color: var(--color-bg-white);
+}
+
 .page-home {
+  background-color: var(--color-bg-white);
+}
+
+.page-about {
   background-color: var(--color-bg-white);
 }
 
@@ -301,6 +310,7 @@ button.nav__link {
   font: inherit;
 }
 
+.nav__links--primary .nav__link[href="about.html"],
 .nav__links--primary .nav__link[href="/about"] {
   min-width: 84px;
 }
@@ -679,9 +689,127 @@ button.nav__link {
   cursor: pointer;
 }
 
-/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+/* ──────────────────────────────────────────────────────────
+   ABOUT PAGE
+   ────────────────────────────────────────────────────────── */
+.about {
+  width: var(--browser-86);
+  max-width: var(--browser-86);
+  margin-inline: auto;
+  padding-top: calc(72 / 1920 * var(--viewport-1920) - 20px);
+  padding-bottom: calc(120 / 1920 * var(--viewport-1920));
+  box-sizing: border-box;
+}
+
+.about__header {
+  margin-bottom: calc(48 / 1920 * var(--viewport-1920));
+  width: 100%;
+  text-align: center;
+}
+
+.about__title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(20 / 1920 * var(--viewport-1920));
+  color: #000;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(85.725 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: calc(-0.857 / 1920 * var(--viewport-1920));
+}
+
+.about__wave {
+  font-size: 1em;
+  line-height: 1;
+}
+
+.about__body {
+  display: flex;
+  flex-direction: column;
+  gap: calc(80 / 1920 * var(--viewport-1920));
+  width: 100%;
+}
+
+.about__intro {
+  display: flex;
+  flex-direction: column;
+  gap: calc(24 / 1920 * var(--viewport-1920));
+  width: 100%;
+}
+
+.about__intro p {
+  color: #000;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(29.11 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 450;
+  line-height: 150%;
+}
+
+.about__list li {
+  color: #000;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(29.11 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 450;
+  line-height: 160%;
+}
+
+.about__experience li {
+  color: #000;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(29.11 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 450;
+  line-height: 145%;
+}
+
+.about__email {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.about__email:hover {
+  opacity: 0.65;
+}
+
+.about__section-title {
+  color: #000;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(57.337 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: calc(-0.573 / 1920 * var(--viewport-1920));
+  margin-bottom: calc(20 / 1920 * var(--viewport-1920));
+}
+
+.about__list,
+.about__experience {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: calc(8 / 1920 * var(--viewport-1920));
+}
+
+.about__experience-dates {
+  display: inline-block;
+  min-width: calc(220 / 1920 * var(--viewport-1920));
+  color: #000;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(33.52 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 450;
+  line-height: 145%;
+}
+
+/* ──────────────────────────────────────────────────────────
    RESPONSIVE
-   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+   ────────────────────────────────────────────────────────── */
 @media (max-width: 600px) {
   :root {
     --hero-max-h: 80vh;
@@ -769,6 +897,13 @@ button.nav__link {
 .vw-block.vw-92 {
   width: var(--browser-92);
   max-width: var(--browser-92);
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
+.browser-86 {
+  width: var(--browser-86);
+  max-width: var(--browser-86);
   flex: 0 0 auto;
   box-sizing: border-box;
 }
@@ -2832,14 +2967,20 @@ html:has(body.page-dark) {
 }
 
 .site-footer__back {
-  color: #000;
-  font-family: "TikTok Sans", sans-serif;
-  font-size: calc(22.939 / 1920 * var(--viewport-1920));
-  font-style: normal;
-  font-weight: 450;
-  line-height: 120%;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
   transition: opacity 0.2s;
+}
+
+.site-footer__back-icon {
+  width: calc(137 / 1920 * var(--viewport-1920));
+  height: calc(22 / 1920 * var(--viewport-1920));
+  display: block;
+}
+
+.page-dark .site-footer__back-icon {
+  filter: invert(1);
 }
 
 .site-footer__back:hover { opacity: 0.5; }
