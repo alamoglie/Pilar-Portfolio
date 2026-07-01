@@ -100,8 +100,7 @@ ul {
 }
 
 /* Contenido acotado: 112px de margen lateral en 1440px, proporcional en el resto */
-.content,
-.bio__text {
+.content {
   width: calc(100% - 2 * var(--content-margin));
   max-width: var(--content-max-width);
   margin-inline: auto;
@@ -309,33 +308,30 @@ button.nav__link {
    HERO
    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .hero {
-  width: 100%;
   position: relative;
   overflow: hidden;
 }
 
+.hero.browser-92 {
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  margin-inline: auto;
+}
+
 .hero__media {
   position: relative;
-  display: flex;
-  justify-content: center;
   width: 100%;
-  height: 750px;
+  height: auto;
   overflow: hidden;
 }
 
 .hero__image {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   object-position: center top;
   display: block;
   transition: transform 8s var(--ease-out);
-}
-
-.hero__image.browser-92 {
-  width: var(--browser-92);
-  max-width: var(--browser-92);
-  flex: 0 0 auto;
 }
 
 .hero:hover .hero__image {
@@ -510,14 +506,17 @@ button.nav__link {
 }
 
 .bio__text {
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  margin-inline: auto;
+  color: #000;
+  text-align: center;
   font-family: "TikTok Sans", sans-serif;
   font-size: calc(65 / 1920 * var(--viewport-1920));
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   letter-spacing: calc(0.65 / 1920 * var(--viewport-1920));
-  text-align: center;
-  color: #000;
 
   /* Fade-in on load */
   animation: fade-up 0.9s var(--ease-out) 0.2s both;
@@ -2611,8 +2610,7 @@ html:has(body.page-dark) {
 }
 
 .page-dark .site-footer {
-  background-color: var(--color-bg-dark);
-  border-top-color: rgba(255, 255, 255, 0.12);
+  background-color: transparent;
 }
 
 .page-dark .site-footer__copy,
@@ -2621,7 +2619,7 @@ html:has(body.page-dark) {
 }
 
 .page-dark .site-footer__bottom {
-  border-top-color: rgba(255, 255, 255, 0.1);
+  border-top-color: #000;
 }
 
 .page-dark .site-footer__link,
@@ -2796,10 +2794,11 @@ html:has(body.page-dark) {
    SITE FOOTER
    ========================================================== */
 .site-footer {
-  background-color: var(--color-bg-white);
-  padding: 0 var(--content-margin) 28px;
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  margin-inline: auto;
+  padding: 0 0 28px;
   box-sizing: border-box;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .site-footer__top {
@@ -2810,20 +2809,22 @@ html:has(body.page-dark) {
 }
 
 .site-footer__copy {
-  font-family: 'TikTok Sans', var(--font-body);
-  font-size: clamp(18px, 2vw, 26px);
-  font-weight: 500;
-  color: #111111;
-  letter-spacing: -0.01em;
+  color: #000;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(22.939 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 450;
+  line-height: 120%;
 }
 
 .site-footer__back {
-  font-family: 'TikTok Sans', var(--font-body);
-  font-size: clamp(18px, 2vw, 26px);
-  font-weight: 500;
-  color: #111111;
+  color: #000;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(22.939 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 450;
+  line-height: 120%;
   text-decoration: none;
-  letter-spacing: -0.01em;
   transition: opacity 0.2s;
 }
 
@@ -2834,14 +2835,16 @@ html:has(body.page-dark) {
   justify-content: space-between;
   align-items: center;
   padding-top: 10px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: calc(1.4 / 1920 * var(--viewport-1920)) solid #000;
 }
 
 .site-footer__link {
-  font-family: 'TikTok Sans', var(--font-body);
-  font-size: 13px;
-  font-weight: 400;
-  color: #444444;
+  color: #000;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(20.187 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 450;
+  line-height: 120%;
   text-decoration: none;
   transition: opacity 0.2s;
 }
@@ -2849,10 +2852,13 @@ html:has(body.page-dark) {
 .site-footer__link:hover { opacity: 0.5; }
 
 .site-footer__time {
-  font-family: 'TikTok Sans', var(--font-body);
-  font-size: 13px;
-  font-weight: 400;
-  color: #444444;
+  color: #000;
+  text-align: center;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(20.187 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 450;
+  line-height: 120%;
 }
 
 /* Responsive */
