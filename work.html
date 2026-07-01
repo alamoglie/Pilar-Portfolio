@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Pilar Meaca is a motion graphics designer with 15+ years of experience working across broadcast, product development, and video games, based in Buenos Aires." />
-  <title>Pilar Meaca â€” Work</title>
+    content="Featured work by Pilar Meaca — sponsorship campaigns, stream packages, and motion design for StreamElements, Fanta, Fortnite, Cap'n Crunch, and more." />
+  <title>Pilar Meaca — Work</title>
   <link rel="icon" type="image/svg+xml" href="images/shared/icon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -48,6 +48,7 @@
 
   <main>
     <section class="work-grid" aria-label="Portfolio Projects">
+      <h1 class="work-grid__title">Featured projects</h1>
 
       <!-- Item 1: Pixar Fest -->
       <article class="work-item">
@@ -60,36 +61,71 @@
         </div>
       </article>
 
-      <!-- Item 2: CookUnity -->
+      <!-- Item 2: Cap'n Crunch -->
       <article class="work-item" data-featured="true">
-
-        <a href="hello-fresh.html" class="work-item__link" aria-label="CookUnity / HelloFresh Sponsorship — view project">
-
-        <a href="hello-fresh.html" class="work-item__link">
-
-          <div class="work-item__image-wrapper">
-            <img src="images/work/work_taco.png" alt="CookUnity / HelloFresh Sponsorship Project"
-              class="work-item__image work-item__image--inset" />
+        <a href="capn-crunch.html" class="work-item__link" aria-label="Cap'n Crunch Sponsorship — view project">
+          <div class="work-item__image-wrapper browser-92">
+            <img src="images/works/CapnCrunch.jpg" alt="Cap'n Crunch Sponsorship Project"
+              class="work-item__image work-item__image--full browser-92" />
           </div>
           <div class="work-item__info">
-            <h2 class="work-item__title">CookUnity / HelloFresh Sponsorship</h2>
+            <h2 class="work-item__title">Cap'n Crunch</h2>
             <p class="work-item__role">art direction / design</p>
           </div>
         </a>
       </article>
 
-      <!-- Item 3: Fanta Sponsorship -->
-      <article class="work-item" data-featured="true">
-        <a href="fanta.html" class="work-item__link" aria-label="Fanta Sponsorship — view project">
-          <div class="work-item__image-wrapper">
-            <img src="images/work/work_fanta.png" alt="Fanta Sponsorship Project" class="work-item__image work-item__image--inset" />
-          </div>
-          <div class="work-item__info">
-            <h2 class="work-item__title">Fanta Sponsorship</h2>
-            <p class="work-item__role">Art Direction / Design</p>
-          </div>
-        </a>
-      </article>
+      <!-- Items 3+9: Stream Packages & Fanta — pair -->
+      <div class="work-pair" data-featured="true">
+        <article class="work-item" data-featured="true">
+          <a href="stream-packages.html" class="work-item__link" aria-label="Stream Packages & Alerts — view project">
+            <div class="work-item__image-wrapper">
+              <img src="images/works/StreamPackages.jpg" alt="Stream Packages & Alerts Project" class="work-item__image work-item__image--full" />
+            </div>
+            <div class="work-item__info">
+              <h2 class="work-item__title">Stream Packages & Alerts</h2>
+              <p class="work-item__role">Art Direction / Design</p>
+            </div>
+          </a>
+        </article>
+        <article class="work-item" data-featured="true">
+          <a href="fanta.html" class="work-item__link" aria-label="Fanta Sponsorship — view project">
+            <div class="work-item__image-wrapper">
+              <img src="images/works/Fanta.jpg" alt="Fanta Sponsorship Project" class="work-item__image work-item__image--full" />
+            </div>
+            <div class="work-item__info">
+              <h2 class="work-item__title">Fanta Sponsorship</h2>
+              <p class="work-item__role">Art Direction / Design</p>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <!-- Stream Packages & Fanta — pair (duplicate) -->
+      <div class="work-pair work-pair--reversed" data-featured="true">
+        <article class="work-item" data-featured="true">
+          <a href="fortnite.html" class="work-item__link" aria-label="Fortnite Sponsorship — view project">
+            <div class="work-item__image-wrapper">
+              <img src="images/works/Fortnite.jpg" alt="Fortnite Sponsorship Project" class="work-item__image work-item__image--full" />
+            </div>
+            <div class="work-item__info">
+              <h2 class="work-item__title">Fortnite Sponsorship</h2>
+              <p class="work-item__role">Art Direction / Design</p>
+            </div>
+          </a>
+        </article>
+        <article class="work-item" data-featured="true">
+          <a href="hello-fresh.html" class="work-item__link" aria-label="HelloFresh / Cookunity Sponsorship — view project">
+            <div class="work-item__image-wrapper">
+              <img src="images/works/HelloFresh.jpg" alt="HelloFresh / Cookunity Sponsorship Project" class="work-item__image work-item__image--full" />
+            </div>
+            <div class="work-item__info">
+              <h2 class="work-item__title">HelloFresh / Cookunity Sponsorship</h2>
+              <p class="work-item__role">Art Direction / Design</p>
+            </div>
+          </a>
+        </article>
+      </div>
 
       <!-- Item 4: DetrÃ¡s de la Gloria -->
       <article class="work-item">
@@ -114,25 +150,11 @@
         </div>
       </article>
 
-      <!-- Item 6: Fortnite Sponsorship -->
-      <article class="work-item" data-featured="true">
-        <a href="fortnite.html" class="work-item__link" aria-label="Fortnite Sponsorship — view project">
-          <div class="work-item__image-wrapper">
-            <img src="images/work/work_fornite.png" alt="Fortnite Sponsorship Project"
-              class="work-item__image work-item__image--inset" />
-          </div>
-          <div class="work-item__info">
-            <h2 class="work-item__title">Fortnite Sponsorship</h2>
-            <p class="work-item__role">Art Direction / Design</p>
-          </div>
-        </a>
-      </article>
-
       <!-- Item 7: In stream Alerts Sponsorship -->
       <article class="work-item" data-featured="true">
         <a href="alerts-in-stream.html" class="work-item__link" aria-label="In stream Alerts Sponsorship — view project">
           <div class="work-item__image-wrapper">
-            <img src="images/work/work_inStream.png" alt="In stream Alerts Sponsorship Project"
+            <img src="images/works/InstreamAlerts.jpg" alt="In stream Alerts Sponsorship Project"
               class="work-item__image work-item__image--full" />
           </div>
           <div class="work-item__info">
@@ -155,36 +177,36 @@
         </div>
       </article>
 
-            <!-- Item 9: Stream Packages & Alerts -->
-            <article class="work-item" data-featured="true">
-              <a href="stream-packages.html" class="work-item__link">
-                <div class="work-item__image-wrapper">
-                  <img src="images/work/work_streamPack.png" alt="Stream Packages & Alerts Project"
-                    class="work-item__image work-item__image--full" />
-                </div>
-                <div class="work-item__info">
-                  <h2 class="work-item__title">Stream Packages & Alerts</h2>
-                  <p class="work-item__role">Art Direction / Design </p>
-                </div>
-              </a>
-            </article>
-
-      <!-- Item 10: Cap'n Crunch Sponsorship -->
-      <article class="work-item" data-featured="true">
-        <a href="capn-crunch.html" class="work-item__link" aria-label="Cap'n Crunch Sponsorship — view project">
-          <div class="work-item__image-wrapper">
-            <img src="images/work/work_victoria.png" alt="Cap'n Crunch Sponsorship Project"
-              class="work-item__image work-item__image--full" />
-          </div>
-          <div class="work-item__info">
-            <h2 class="work-item__title">Cap'n Crunch Sponsorship</h2>
-            <p class="work-item__role">Art Direction / Design</p>
-          </div>
-        </a>
-      </article>
 
     </section>
+
+    <footer class="site-footer">
+      <div class="site-footer__top">
+        <span class="site-footer__copy">2026 Pilar Meaca®</span>
+        <a href="#top" class="site-footer__back">Back to top ↑</a>
+      </div>
+      <div class="site-footer__bottom">
+        <a href="mailto:pilarmeaca@gmail.com" class="site-footer__link">pilarmeaca@gmail.com</a>
+        <a href="https://linkedin.com/in/pilarmeaca" target="_blank" rel="noopener" class="site-footer__link">LinkedIn</a>
+        <span class="site-footer__time" id="footer-time">BA</span>
+      </div>
+    </footer>
   </main>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const ba = now.toLocaleTimeString('en-US', {
+        timeZone: 'America/Argentina/Buenos_Aires',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+      });
+      document.getElementById('footer-time').textContent = 'BA ' + ba;
+    }
+    updateTime();
+    setInterval(updateTime, 30000);
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>

@@ -1,6 +1,6 @@
 (function () {
   const filterButtons = document.querySelectorAll('[data-work-filter]');
-  const workItems = document.querySelectorAll('.work-item');
+  const workItems = document.querySelectorAll('.work-item, .work-pair');
 
   function applyFilter(filter) {
     workItems.forEach((item) => {

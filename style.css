@@ -27,6 +27,7 @@
   --hero-max-h: 80vh;
   --design-width: 1440px;
   --site-max-width: 1920px;
+  --viewport-1920: min(100vw, var(--site-max-width));
   --layout-narrow-max: 1400px;
   --layout-narrow-ratio: 0.729;
   --layout-medium-ratio: 0.94;
@@ -518,15 +519,104 @@ button.nav__link {
    WORK PAGE
    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .work-grid {
+  --work-grid-gap: 80px;
+  --work-grid-gap-tight: min(calc(56 / 1920 * 100vw), 56px);
+  --work-grid-gap-after-title: min(calc(18 / 1920 * 100vw), 18px);
+  --work-grid-nav-gap: calc(72 / 1920 * var(--viewport-1920));
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  align-items: center;
+  gap: var(--work-grid-gap);
   width: 100%;
-  padding-top: 0px;
+  padding-top: calc(var(--work-grid-nav-gap) - 20px);
   padding-bottom: 120px;
 }
 
-.work-item,
+.work-grid > .work-grid__title + .work-item,
+.work-grid > .work-grid__title + .work-item[hidden] + .work-item {
+  margin-top: calc(var(--work-grid-gap-after-title) - var(--work-grid-gap));
+}
+
+.work-grid > .work-item + .work-pair,
+.work-grid > .work-pair + .work-pair {
+  margin-top: calc(var(--work-grid-gap-tight) - var(--work-grid-gap));
+}
+
+.work-grid__title {
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  color: #000;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(52 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 350;
+  line-height: 100%;
+}
+
+.work-item {
+  width: var(--browser-92);
+  max-width: var(--browser-92);
+  box-sizing: border-box;
+}
+
+.work-pair {
+  --pair-image-w-wide: min(calc(1195 / 1920 * 100vw), 1195px);
+  --pair-image-w-narrow: min(calc(531 / 1920 * 100vw), 531px);
+  --pair-image-h: min(calc(673 / 1920 * 100vw), 673px);
+  --pair-gap: min(calc(16 / 1920 * 100vw), 16px);
+  display: grid;
+  grid-template-columns: var(--pair-image-w-wide) var(--pair-image-w-narrow);
+  gap: var(--pair-gap);
+  width: fit-content;
+  max-width: var(--browser-92);
+  box-sizing: border-box;
+}
+
+.work-pair--reversed {
+  --pair-image-w-narrow: min(calc(602 / 1920 * 100vw), 602px);
+  --pair-image-w-wide: min(calc(1123 / 1920 * 100vw), 1123px);
+  --pair-image-h: min(calc(559 / 1920 * 100vw), 559px);
+  grid-template-columns: var(--pair-image-w-narrow) var(--pair-image-w-wide);
+}
+
+.work-pair .work-item {
+  width: 100%;
+  max-width: 100%;
+}
+
+.work-pair .work-item__image-wrapper {
+  width: 100%;
+  height: var(--pair-image-h);
+  overflow: hidden;
+}
+
+.work-pair .work-item__image-wrapper .work-item__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.work-item__title {
+  color: #000;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(29.638 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 450;
+  line-height: 100%;
+  margin-top: -5px;
+  margin-bottom: 4px;
+}
+
+.work-item__role {
+  color: #505050;
+  font-family: "TikTok Sans", sans-serif;
+  font-size: calc(16.301 / 1920 * var(--viewport-1920));
+  font-style: normal;
+  font-weight: 350;
+  line-height: 140%;
+}
 .work-item__image-wrapper,
 .work-item__info {
   width: 100%;
@@ -547,26 +637,7 @@ button.nav__link {
 
 .work-item__info {
   margin-top: 16px;
-  padding-inline: var(--content-margin);
-}
-
-.work-item__title {
-  font-family: var(--font-display);
-  font-size: 33px;
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  font-variation-settings: "wdth" 95;
-  margin-top: -5px;
-  margin-bottom: 4px;
-}
-
-.work-item__role {
-  font-family: var(--font-body);
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 0.82;
-  color: #000000;
-  text-transform: lowercase;
+  padding-inline: 0;
 }
 
 .work-item__link {
@@ -958,7 +1029,7 @@ button.nav__link {
 
 .theme-section--dark .theme-content-block__desc {
   font-family: 'Work Sans', sans-serif;
-  font-size: calc(25 * 100vw / 1920);
+  font-size: calc(25 / 1920 * var(--viewport-1920));
   font-weight: 400;
   line-height: 1.3;
   color: #FFF0D7;
@@ -1021,7 +1092,7 @@ button.nav__link {
   -webkit-text-stroke-width: calc(0.77 * 100vw / 1920);
   -webkit-text-stroke-color: #000;
   font-family: 'Raleway', sans-serif;
-  font-size: calc(60 * 100vw / 1920);
+  font-size: calc(60 / 1920 * var(--viewport-1920));
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
@@ -1034,7 +1105,7 @@ button.nav__link {
   color: #FFF0D7;
   text-align: center;
   font-family: 'Raleway', sans-serif;
-  font-size: calc(25 * 100vw / 1920);
+  font-size: calc(25 / 1920 * var(--viewport-1920));
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
@@ -1135,7 +1206,7 @@ button.nav__link {
   -webkit-text-stroke-width: calc(0.77 * 100vw / 1920);
   -webkit-text-stroke-color: #000;
   font-family: 'Raleway', sans-serif;
-  font-size: calc(60 * 100vw / 1920);
+  font-size: calc(60 / 1920 * var(--viewport-1920));
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
@@ -1148,7 +1219,7 @@ button.nav__link {
   color: #FFF0D7;
   text-align: center;
   font-family: 'Raleway', sans-serif;
-  font-size: calc(25 * 100vw / 1920);
+  font-size: calc(25 / 1920 * var(--viewport-1920));
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
@@ -1255,7 +1326,7 @@ button.nav__link {
 
 .hitman-branded__desc {
   font-family: var(--font-body);
-  font-size: calc(25 * 100vw / 1920);
+  font-size: calc(25 / 1920 * var(--viewport-1920));
   font-weight: 400;
   line-height: 1.65;
   color: #888888;
@@ -1376,7 +1447,7 @@ button.nav__link {
 
 .hitman-alerts__desc {
   font-family: var(--font-body);
-  font-size: calc(25 * 100vw / 1920);
+  font-size: calc(25 / 1920 * var(--viewport-1920));
   font-weight: 400;
   line-height: 1.55;
   color: #888888;
@@ -1490,7 +1561,7 @@ button.nav__link {
 
 .holiday-pack__desc {
   font-family: 'Nunito Sans', sans-serif;
-  font-size: calc(25 * 100vw / 1920);
+  font-size: calc(25 / 1920 * var(--viewport-1920));
   font-weight: 400;
   line-height: 1.55;
   color: #EEFFF9;
@@ -1589,7 +1660,7 @@ button.nav__link {
 
 .theme-content-block__desc {
   font-family: var(--font-body);
-  font-size: calc(25 * 100vw / 1920);
+  font-size: calc(25 / 1920 * var(--viewport-1920));
   font-weight: 400;
   line-height: 1.65;
   width: 100%;
@@ -1691,7 +1762,7 @@ button.nav__link {
 
 .bond-alerts__desc {
   font-family: var(--font-body);
-  font-size: calc(25 * 100vw / 1920);
+  font-size: calc(25 / 1920 * var(--viewport-1920));
   font-weight: 400;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.55);
@@ -2652,7 +2723,7 @@ html:has(body.page-dark) {
   color: #DABB7C;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  font-size: calc(25 * 100vw / 1920);
+  font-size: calc(25 / 1920 * var(--viewport-1920));
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
@@ -2669,7 +2740,7 @@ html:has(body.page-dark) {
 .page-dark .astro-alerts__desc {
   color: #FFF0D7;
   font-family: 'Raleway', sans-serif;
-  font-size: calc(25 * 100vw / 1920);
+  font-size: calc(25 / 1920 * var(--viewport-1920));
   line-height: 120%;
   letter-spacing: normal;
 }
@@ -2698,7 +2769,7 @@ html:has(body.page-dark) {
 }
 
 .page-dark main p {
-  font-size: calc(25 * 100vw / 1920);
+  font-size: calc(25 / 1920 * var(--viewport-1920));
 }
 
 /* ==========================================================
@@ -2910,7 +2981,7 @@ html:has(body.page-dark) {
   color: #FFF;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  font-size: calc(26 * 100vw / 1920);
+  font-size: calc(26 / 1920 * var(--viewport-1920));
   font-style: normal;
   font-weight: 600;
   line-height: 140%;
@@ -3240,7 +3311,7 @@ html:has(body.page-dark) {
   color: #184C84;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  font-size: calc(26 * 100vw / 1920);
+  font-size: calc(26 / 1920 * var(--viewport-1920));
   font-style: normal;
   font-weight: 600;
   line-height: 140%;
@@ -3363,7 +3434,7 @@ html:has(body.page-dark) {
   color: #FFF;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  font-size: calc(26 * 100vw / 1920);
+  font-size: calc(26 / 1920 * var(--viewport-1920));
   font-style: normal;
   font-weight: 600;
   line-height: 140%;
