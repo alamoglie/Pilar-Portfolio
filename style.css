@@ -21,6 +21,7 @@
   --nav-height: 55px;
   --browser-92: min(92vw, 1766px);
   --browser-86: min(86vw, 1651px);
+  --browser-49: min(49vw, 941px);
   --browser-83: min(83vw, 1594px);
   --nav-width: var(--browser-92);
   --nav-top-offset: 20px;
@@ -693,8 +694,8 @@ button.nav__link {
    ABOUT PAGE
    ────────────────────────────────────────────────────────── */
 .about {
-  width: var(--browser-86);
-  max-width: var(--browser-86);
+  width: var(--browser-49);
+  max-width: var(--browser-49);
   margin-inline: auto;
   padding-top: calc(72 / 1920 * var(--viewport-1920) - 20px);
   padding-bottom: calc(120 / 1920 * var(--viewport-1920));
@@ -897,6 +898,13 @@ button.nav__link {
 .vw-block.vw-92 {
   width: var(--browser-92);
   max-width: var(--browser-92);
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
+.browser-49 {
+  width: var(--browser-49);
+  max-width: var(--browser-49);
   flex: 0 0 auto;
   box-sizing: border-box;
 }
